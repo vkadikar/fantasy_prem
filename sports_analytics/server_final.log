@@ -1,0 +1,33 @@
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8001
+ * Running on http://172.20.10.3:8001
+[33mPress CTRL+C to quit[0m
+API Request for 044ei
+Loading stats cache...
+Loading data cache...
+Data loaded. processing...
+127.0.0.1 - - [30/Jan/2026 15:46:33] "GET /api/player/044ei HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "GET /static/js/app.js?v=1.1 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "GET /static/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "GET /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jan/2026 15:47:16] "GET /api/matchups/24 HTTP/1.1" 200 -
+DEBUG: Week 24, Found 883 predictions, pred_map has 883 entries
+DEBUG: Sample player IDs in pred_map: ['061vq', '05gcr', '068y0']
+127.0.0.1 - - [30/Jan/2026 15:47:34] "GET /api/lineup/24_1t98phesmd5cytbv_af1qhccfmdhlee7c HTTP/1.1" 200 -
+API Request for 06cmu
+Loading stats cache...
+Loading data cache...
+Data loaded. processing...
+127.0.0.1 - - [30/Jan/2026 15:47:36] "GET /api/player/06cmu HTTP/1.1" 200 -
+API Request for 051k7
+Loading stats cache...
+Loading data cache...
+Data loaded. processing...
+127.0.0.1 - - [30/Jan/2026 15:47:59] "GET /api/player/051k7 HTTP/1.1" 200 -
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-5ez62393'}
+  warnings.warn(

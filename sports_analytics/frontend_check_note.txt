@@ -1,0 +1,4 @@
+
+# Frontend Verification
+- Restarted server with Python 3.14
+- Launched browser check on http://localhost:8000

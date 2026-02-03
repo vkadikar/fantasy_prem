@@ -1,0 +1,252 @@
+* Host localhost:8001 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:8001...
+* connect to ::1 port 8001 from ::1 port 63903 failed: Connection refused
+*   Trying 127.0.0.1:8001...
+* Connected to localhost (127.0.0.1) port 8001
+> GET /api/player/044ei HTTP/1.1
+> Host: localhost:8001
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: Werkzeug/3.1.5 Python/3.14.2
+< Date: Fri, 30 Jan 2026 20:46:33 GMT
+< Content-Type: application/json
+< Content-Length: 3743
+< Connection: close
+< 
+{ [3743 bytes data]
+100  3743  100  3743    0     0  24509      0 --:--:-- --:--:-- --:--:-- 24625
+* Closing connection
+{
+  "game_log": [
+    {
+      "INJURED": "Available",
+      "projected_fpts": 14.22,
+      "week": 24
+    },
+    {
+      "CLR": 2.0,
+      "FPTS": 8.5,
+      "GAO": 2.0,
+      "MIN": 90.0,
+      "SV": 6.0,
+      "projected_fpts": 13.52,
+      "week": 23
+    },
+    {
+      "CLR": 1.0,
+      "CS": 1.0,
+      "FPTS": 12.25,
+      "MIN": 90.0,
+      "SV": 2.0,
+      "projected_fpts": 11.44,
+      "week": 22
+    },
+    {
+      "AER": 2.0,
+      "CLR": 1.0,
+      "FPTS": 4.25,
+      "GAO": 3.0,
+      "HCS": 2.0,
+      "MIN": 90.0,
+      "SV": 3.0,
+      "projected_fpts": 4.33,
+      "week": 21
+    },
+    {
+      "AER": 1.0,
+      "CS": 1.0,
+      "FPTS": 12.0,
+      "HCS": 1.0,
+      "MIN": 90.0,
+      "SV": 1.0,
+      "projected_fpts": 6.01,
+      "week": 20
+    },
+    {
+      "CLR": 1.0,
+      "FPTS": 2.25,
+      "GAO": 1.0,
+      "MIN": 90.0,
+      "SV": 2.0,
+      "projected_fpts": 7.72,
+      "week": 19
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 18
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 17
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 16
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 15
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 14
+    },
+    {
+      "projected_fpts": 0.0,
+      "week": 13
+    },
+    {
+      "FPTS": 6.0,
+      "GAO": 1.0,
+      "HCS": 1.0,
+      "MIN": 90.0,
+      "SM": 1.0,
+      "SV": 3.0,
+      "projected_fpts": 7.28,
+      "week": 12
+    },
+    {
+      "AER": 1.0,
+      "CLR": 4.0,
+      "FPTS": 7.0,
+      "GAO": 1.0,
+      "HCS": 1.0,
+      "MIN": 76.0,
+      "SV": 3.0,
+      "projected_fpts": 8.64,
+      "week": 11
+    },
+    {
+      "CLR": 7.0,
+      "FPTS": 10.75,
+      "GAO": 3.0,
+      "HCS": 1.0,
+      "MIN": 90.0,
+      "SV": 7.0,
+      "projected_fpts": 10.22,
+      "week": 10
+    },
+    {
+      "FPTS": 7.0,
+      "GAO": 1.0,
+      "HCS": 1.0,
+      "MIN": 90.0,
+      "SV": 4.0,
+      "projected_fpts": 9.81,
+      "week": 9
+    },
+    {
+      "AER": 1.0,
+      "CLR": 3.0,
+      "FPTS": 5.75,
+      "GAO": 2.0,
+      "HCS": 2.0,
+      "MIN": 90.0,
+      "SV": 3.0,
+      "projected_fpts": 13.9,
+      "week": 8
+    },
+    {
+      "CLR": 1.0,
+      "CS": 1.0,
+      "FPTS": 17.25,
+      "MIN": 90.0,
+      "SM": 1.0,
+      "SV": 4.0,
+      "projected_fpts": 11.26,
+      "week": 7
+    },
+    {
+      "AER": 1.0,
+      "CLR": 3.0,
+      "FPTS": 10.75,
+      "GAO": 2.0,
+      "HCS": 2.0,
+      "MIN": 90.0,
+      "SV": 5.0,
+      "TKW": 1.0,
+      "projected_fpts": 9.66,
+      "week": 6
+    },
+    {
+      "AER": 1.0,
+      "CLR": 1.0,
+      "CS": 1.0,
+      "FPTS": 16.25,
+      "HCS": 3.0,
+      "MIN": 90.0,
+      "SV": 2.0,
+      "projected_fpts": 9.54,
+      "week": 5
+    },
+    {
+      "AER": 1.0,
+      "CS": 1.0,
+      "FPTS": 16.0,
+      "HCS": 1.0,
+      "MIN": 90.0,
+      "SV": 3.0,
+      "projected_fpts": 7.47,
+      "week": 4
+    },
+    {
+      "AER": 2.0,
+      "CLR": 1.0,
+      "CS": 1.0,
+      "FPTS": 12.25,
+      "HCS": 2.0,
+      "MIN": 90.0,
+      "SV": 1.0,
+      "YC": 1.0,
+      "projected_fpts": 7.12,
+      "week": 3
+    },
+    {
+      "AT": 1.0,
+      "CLR": 1.0,
+      "FPTS": 3.25,
+      "GAO": 3.0,
+      "MIN": 90.0,
+      "SV": 1.0,
+      "projected_fpts": 7.44,
+      "week": 2
+    },
+    {
+      "AER": 1.0,
+      "CLR": 1.0,
+      "CS": 1.0,
+      "FPTS": 18.25,
+      "HCS": 3.0,
+      "MIN": 90.0,
+      "SV": 3.0,
+      "projected_fpts": 0.0,
+      "week": 1
+    }
+  ],
+  "profile": {
+    "name": "Nick Pope",
+    "position": "-",
+    "team": "False"
+  },
+  "season_stats": {
+    "AER": 11.0,
+    "AT": 1.0,
+    "CLR": 27.0,
+    "CS": 7.0,
+    "FPTS": 169.75,
+    "GAO": 19.0,
+    "HCS": 20.0,
+    "MIN": 1516.0,
+    "SM": 2.0,
+    "SV": 53.0,
+    "TKW": 1.0,
+    "YC": 1.0
+  }
+}

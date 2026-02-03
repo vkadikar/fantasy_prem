@@ -1,0 +1,10 @@
+flask
+pandas
+numpy
+requests
+plotly
+scikit-learn
+python-dotenv
+gunicorn
+# Note: 'fantraxapi' is required but exact package name unknown. 
+# If you installed it via pip, run 'pip freeze | grep fantrax' to find the name.

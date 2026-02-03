@@ -1,0 +1,29 @@
+* Host localhost:8001 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:8001...
+* connect to ::1 port 8001 from ::1 port 63893 failed: Connection refused
+*   Trying 127.0.0.1:8001...
+* Connected to localhost (127.0.0.1) port 8001
+> GET /api/player/044ei HTTP/1.1
+> Host: localhost:8001
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 500 INTERNAL SERVER ERROR
+< Server: Werkzeug/3.1.5 Python/3.14.2
+< Date: Fri, 30 Jan 2026 20:46:09 GMT
+< Content-Type: application/json
+< Content-Length: 337
+< Connection: close
+< 
+{ [337 bytes data]
+100   337  100   337    0     0    800      0 --:--:-- --:--:-- --:--:--   802
+* Closing connection
+{
+  "error": "name 'predictions' is not defined",
+  "trace": "Traceback (most recent call last):\n  File \"/Users/varunkadikar/Desktop/personal_projects/Antigravity/sports_analytics/dashboard/server.py\", line 673, in get_player_api\n    for p in predictions:\n             ^^^^^^^^^^^\nNameError: name 'predictions' is not defined\n"
+}

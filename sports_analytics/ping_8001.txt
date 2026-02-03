@@ -1,0 +1,26 @@
+* Host localhost:8001 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:8001...
+* connect to ::1 port 8001 from ::1 port 63889 failed: Connection refused
+*   Trying 127.0.0.1:8001...
+* Connected to localhost (127.0.0.1) port 8001
+> GET /ping HTTP/1.1
+> Host: localhost:8001
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: Werkzeug/3.1.5 Python/3.14.2
+< Date: Fri, 30 Jan 2026 20:46:08 GMT
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 4
+< Connection: close
+< 
+{ [4 bytes data]
+100     4  100     4    0     0    189      0 --:--:-- --:--:-- --:--:--   200
+* Closing connection
+pong

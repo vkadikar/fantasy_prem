@@ -1,0 +1,36 @@
+Error fetching roster for mqmbxwrtmdg6mr2l, period 24: Invalid JSON Response to [<fantraxapi.api.Method object at 0x109161370>]: Expecting value: line 1 column 1 (char 0)
+Data: {'msgs': [{'method': 'getTeamRosterInfo', 'data': {'leagueId': 'de19pr8smd5cytbm', 'teamId': 'mqmbxwrtmdg6mr2l', 'period': '24'}}]}
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/fantraxapi/api.py", line 52, in _request
+    response_json = response.json()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/varunkadikar/Desktop/personal_projects/Antigravity/sports_analytics/dashboard/server.py", line 503, in fetch_team_roster
+    roster_data = request(api, Method("getTeamRosterInfo", teamId=tid, period=period))
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/fantraxapi/api.py", line 38, in request
+    return _request(league.league_id, methods, session=league.session)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/fantraxapi/api.py", line 54, in _request
+    raise FantraxException(f"Invalid JSON Response to {methods}: {e}\nData: {json_data}")
+fantraxapi.exceptions.FantraxException: Invalid JSON Response to [<fantraxapi.api.Method object at 0x109161370>]: Expecting value: line 1 column 1 (char 0)
+Data: {'msgs': [{'method': 'getTeamRosterInfo', 'data': {'leagueId': 'de19pr8smd5cytbm', 'teamId': 'mqmbxwrtmdg6mr2l', 'period': '24'}}]}

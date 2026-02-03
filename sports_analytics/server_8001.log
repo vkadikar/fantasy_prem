@@ -1,0 +1,20 @@
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8001
+ * Running on http://172.20.10.3:8001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [30/Jan/2026 15:46:08] "GET /ping HTTP/1.1" 200 -
+API Request for 044ei
+Loading stats cache...
+Loading data cache...
+Data loaded. processing...
+Traceback (most recent call last):
+  File "/Users/varunkadikar/Desktop/personal_projects/Antigravity/sports_analytics/dashboard/server.py", line 673, in get_player_api
+    for p in predictions:
+             ^^^^^^^^^^^
+NameError: name 'predictions' is not defined
+127.0.0.1 - - [30/Jan/2026 15:46:09] "[35m[1mGET /api/player/044ei HTTP/1.1[0m" 500 -
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-cpfaloqc'}
+  warnings.warn(

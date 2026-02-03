@@ -1,0 +1,3955 @@
+{
+  "settings": {
+    "logoUploaded": true,
+    "logoUrl": "https://fantraximg.com/logos/3gk/lgLogo_3gkcwbb3lzbq4uhu_256.jpg"
+  },
+  "scoringCategoryTypes": [
+    {
+      "value": "Tracked",
+      "key": "5"
+    },
+    {
+      "value": "Standard",
+      "key": "1"
+    }
+  ],
+  "teamHeadingInfo": {
+    "h2hRecord": {
+      "name": "Record",
+      "shortName": "Rec",
+      "value": "16-0-7"
+    },
+    "rank": {
+      "name": "Rank",
+      "shortName": "Rk",
+      "value": "1st"
+    },
+    "owners": {
+      "owners": "Owner(s)",
+      "shortName": "Own",
+      "value": "vkadikar"
+    }
+  },
+  "periodOppnentTeamIds": [
+    "af1qhccfmdhlee7c"
+  ],
+  "tabs": [
+    {
+      "viewType": "8",
+      "text": "Simple",
+      "code": "SIMPLE"
+    },
+    {
+      "viewType": "1",
+      "text": "Stats",
+      "code": "STATS"
+    },
+    {
+      "viewType": "3",
+      "text": "Fantasy Points",
+      "code": "FPTS"
+    },
+    {
+      "viewType": "2",
+      "text": "Trends",
+      "code": "OVERVIEW"
+    },
+    {
+      "viewType": "5",
+      "text": "Schedule - Period",
+      "code": "SCHEDULE_PERIOD"
+    },
+    {
+      "viewType": "6",
+      "text": "Schedule - Full",
+      "code": "SCHEDULE_FULL"
+    },
+    {
+      "viewType": "7",
+      "text": "Min/Max",
+      "code": "GAMES_PER_POS"
+    }
+  ],
+  "miscData": {
+    "maxActions": 1,
+    "realTeamJerseyMap": {
+      "110105": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Nottingham_Forest.png"
+      },
+      "110101": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Newcastle_United.png"
+      },
+      "110222": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Burnley_3.png"
+      },
+      "110223": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Burnley_3.png"
+      },
+      "110066": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Hull_City.png"
+      },
+      "110220": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Burnley.png"
+      },
+      "110100": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Newcastle_United.png"
+      },
+      "110221": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Burnley.png"
+      },
+      "110230": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Leicester_City.png"
+      },
+      "110150": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Swansea_City.png"
+      },
+      "110030": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Bolton_Wanderers.png"
+      },
+      "110270": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Ipswich_Town.png"
+      },
+      "110190": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Wolverhampton_Wanderers.png"
+      },
+      "110070": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Liverpool.png"
+      },
+      "110191": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Wolverhampton_Wanderers.png"
+      },
+      "110136": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Southampton.png"
+      },
+      "110135": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Southampton.png"
+      },
+      "110011": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Aston_Villa.png"
+      },
+      "110210": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Blackpool.png"
+      },
+      "110020": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Blackburn_Rovers.png"
+      },
+      "110141": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Sunderland.png"
+      },
+      "110065": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Hull_City.png"
+      },
+      "110021": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Luton_Town.png"
+      },
+      "110062": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Fulham.png"
+      },
+      "110260": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Leeds_United.png"
+      },
+      "110063": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Fulham.png"
+      },
+      "110140": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Sunderland.png"
+      },
+      "110261": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Leeds_United2.png"
+      },
+      "110060": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Fulham.png"
+      },
+      "110061": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Fulham.png"
+      },
+      "110180": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Wigan_Athletic.png"
+      },
+      "110127": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Sheffield_United.png"
+      },
+      "110128": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Sheffield_United.png"
+      },
+      "110125": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Reading.png"
+      },
+      "110200": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Birmingham_City.png"
+      },
+      "110000": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Arsenal.png"
+      },
+      "110165": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Watford.png"
+      },
+      "110045": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Crystal_Palace.png"
+      },
+      "110166": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Watford.png"
+      },
+      "110090": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Manchester_United.png"
+      },
+      "110130": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Stoke_City.png"
+      },
+      "110010": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Aston_Villa.png"
+      },
+      "110175": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_West_Ham_United.png"
+      },
+      "110095": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Middlesbrough.png"
+      },
+      "110250": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Huddersfield_Town.png"
+      },
+      "110170": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_West_Bromwich_Albion.png"
+      },
+      "110050": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Everton.png"
+      },
+      "110171": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_West_Bromwich_Albion.png"
+      },
+      "110237": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Brentford.png"
+      },
+      "110035": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Cardiff_City.png"
+      },
+      "110112": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Norwich_City.png"
+      },
+      "110036": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Cardiff_City.png"
+      },
+      "110033": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Bournemouth.png"
+      },
+      "110110": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Norwich_City.png"
+      },
+      "110231": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Leicester_City.png"
+      },
+      "110034": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Bournemouth.png"
+      },
+      "110111": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Norwich_City.png"
+      },
+      "110240": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Brighton_and_Hove_Albion.png"
+      },
+      "110120": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Queens_Park_Rangers.png"
+      },
+      "110040": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Chelsea.png"
+      },
+      "110160": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Tottenham_Hotspur.png"
+      },
+      "110080": {
+        "url": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey_Manchester_City.png"
+      }
+    },
+    "autoSubOrderMap": {},
+    "displayedMaxDate": 1779681599000,
+    "statusTotals": [
+      {
+        "total": 11,
+        "max": 11,
+        "name": "Active",
+        "id": "1"
+      },
+      {
+        "total": 5,
+        "max": 5,
+        "name": "Reserve",
+        "id": "2"
+      },
+      {
+        "total": 1,
+        "max": 1,
+        "name": "Inj Res",
+        "id": "3"
+      }
+    ],
+    "showConfirmWindow": true,
+    "periodName": "Gameweek",
+    "goalieJerseyUrl": "https://fantraximg.com/assets/images/jerseys/epl/Premier-League-jersey-logo_goalkeeper.png",
+    "transactionSalaryBudgetInfo": [],
+    "autoSubsOrderingType": "MOST_FPTS",
+    "displayedMinDate": 1755230400000,
+    "alwaysShowPosition": true,
+    "autoSubmitLineupChanges": false,
+    "applyToFuturePeriods": true,
+    "tradesAllowed": true,
+    "showPendingTransactions": true,
+    "claimsDropsAllowed": false,
+    "alwaysShowPositionIds": [
+      "701",
+      "702",
+      "703"
+    ],
+    "autoSubOrderMax": 6
+  },
+  "myTeamIds": [
+    "1t98phesmd5cytbv"
+  ],
+  "goBackDays": [
+    1,
+    7,
+    14,
+    30,
+    60
+  ],
+  "rosterDisplayMap": [],
+  "hideRowsLineupChange": false,
+  "tables": [
+    {
+      "scGroup": "5020",
+      "statusTotals": [
+        {
+          "total": 1,
+          "name": "Active",
+          "id": "1"
+        }
+      ],
+      "scGroupScorerHeader": "Goalkeeper",
+      "header": {
+        "cells": [
+          {
+            "eventStr": true,
+            "sortDirection": 1,
+            "name": "Opponent",
+            "shortName": "Opp",
+            "key": "opponent"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORE",
+            "sortType": "SCORE",
+            "name": "Fantasy Points",
+            "shortName": "FPts",
+            "key": "fpts"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "FPTS_PER_GAME",
+            "sortType": "FPTS_PER_GAME",
+            "name": "Average Fantasy Points per Game",
+            "shortName": "FP/G",
+            "key": "fptsPerGame"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6060#-1",
+            "scipId": "5020#6060#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Games Played",
+            "width": 3.0,
+            "shortName": "GP",
+            "key": "5020#6060#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6120#-1",
+            "scipId": "5020#6120#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Minutes Played",
+            "width": 4.0,
+            "shortName": "Min",
+            "key": "5020#6120#-1",
+            "maxWidth": 4.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6249#-1",
+            "scipId": "5020#6249#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Clean Sheets On Field -- Awarded to a player who played at least 60 minutes and whose team gave up 0 goals during the time the player was on the field, even if a goal was scored after the player left the field",
+            "width": 3.0,
+            "shortName": "CS",
+            "key": "5020#6249#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5020#6112#-1",
+            "scipId": "5020#6112#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Goals Against -- Goals conceded by the team while the goalkeeper was on the field. This only applies to the goalkeeper.",
+            "width": 3.0,
+            "shortName": "GA",
+            "key": "5020#6112#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6200#-1",
+            "scipId": "5020#6200#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Saves",
+            "width": 3.0,
+            "shortName": "Sv",
+            "key": "5020#6200#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5020#6280#-1",
+            "scipId": "5020#6280#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Yellow Cards",
+            "width": 3.0,
+            "shortName": "YC",
+            "key": "5020#6280#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5020#6190#-1",
+            "scipId": "5020#6190#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Red Cards -- If a player receives a red card and then has his red card rescinded at a later time, his red card will remain (i.e. he will have credit for both a red card and a red card rescinded).",
+            "width": 3.0,
+            "shortName": "RC",
+            "key": "5020#6190#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6170#-1",
+            "scipId": "5020#6170#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Penalty Kick Saves -- Number of penalty kicks saved by the goalkeeper",
+            "width": 3.0,
+            "shortName": "PKS",
+            "key": "5020#6170#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6256#-1",
+            "scipId": "5020#6256#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Tackles Won -- Total tackles won (winning possession or putting the ball out of play)",
+            "width": 3.0,
+            "shortName": "TkW",
+            "key": "5020#6256#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6039#-1",
+            "scipId": "5020#6039#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Dispossessed",
+            "width": 3.0,
+            "shortName": "DIS",
+            "key": "5020#6039#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6090#-1",
+            "scipId": "5020#6090#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Goals",
+            "width": 3.0,
+            "shortName": "G",
+            "key": "5020#6090#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6002#-1",
+            "scipId": "5020#6002#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Key Passes (Assists on Shots) -- Player assists a shot (including goals)",
+            "width": 3.0,
+            "shortName": "KP",
+            "key": "5020#6002#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6362#-1",
+            "scipId": "5020#6362#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Assists (Total) -- Official Assists + Fantasy Assists",
+            "width": 3.0,
+            "shortName": "AT",
+            "key": "5020#6362#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6108#-1",
+            "scipId": "5020#6108#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Interceptions -- Player intercepts a pass",
+            "width": 3.0,
+            "shortName": "Int",
+            "key": "5020#6108#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6016#-1",
+            "scipId": "5020#6016#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Effective Clearances -- Successful defensive clearance - where player under pressure kicks the ball clear of the defensive zone and/or out of play",
+            "width": 3.0,
+            "shortName": "CLR",
+            "key": "5020#6016#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6019#-1",
+            "scipId": "5020#6019#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Successful Dribbles (Contests Succeeded) -- Total dribbles where a player beats an opponent - no overruns",
+            "width": 3.0,
+            "shortName": "CoS",
+            "key": "5020#6019#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6007#-1",
+            "scipId": "5020#6007#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Aerials Won -- Successful aerial duels (the definition of an aerial duel is that it is between two players - either both jumping or only one jumping and the other contesting the header by making it difficult to win - and one player has to win the contest with a header OR if it is between an outfield player and a goalkeeper then the goalkeeper is allowed to punch it clear)",
+            "width": 3.0,
+            "shortName": "AER",
+            "key": "5020#6007#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6116#-1",
+            "scipId": "5020#6116#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "High Claims Succeeded -- Goalkeeper catches a cross",
+            "width": 3.0,
+            "shortName": "HCS",
+            "key": "5020#6116#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6268#-1",
+            "scipId": "5020#6268#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Smothers",
+            "width": 3.0,
+            "shortName": "Sm",
+            "key": "5020#6268#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5020#6105#-1",
+            "scipId": "5020#6105#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Own Goals -- Goals scored on own net",
+            "width": 3.0,
+            "shortName": "OG",
+            "key": "5020#6105#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5020#6230#-1",
+            "scipId": "5020#6230#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Shots on Target",
+            "width": 3.0,
+            "shortName": "SOT",
+            "key": "5020#6230#-1",
+            "maxWidth": 3.0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "scorer": {
+            "teamName": "Brighton",
+            "urlName": "bart-verbruggen",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Brighton_and_Hove_Albion.png",
+            "scorerId": "06cmu",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "704"
+            ],
+            "defaultPosId": "704",
+            "posShortNames": "G",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Feb 1, 5:46 AM: Verbruggen recorded three saves and...",
+                "typeId": "14"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "704"
+            ],
+            "teamId": "110240",
+            "name": "Bart Verbruggen",
+            "teamShortName": "BHA",
+            "shortName": "B. Verbruggen"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "704",
+          "cells": [
+            {
+              "content": "EVE 1<br/>@BHA 1 F",
+              "eventId": "06c2o"
+            },
+            {
+              "content": "139"
+            },
+            {
+              "content": "5.79"
+            },
+            {
+              "content": "24"
+            },
+            {
+              "content": "2,160"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "32"
+            },
+            {
+              "content": "67"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "13"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "704"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "numSpotsAvailableText": "Reserve spot(s) available",
+          "description": "Reserve spot(s) available",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "2",
+          "numSpotsAvailable": 0
+        },
+        {
+          "numSpotsAvailableText": "Inj Res spot(s) available",
+          "description": "Inj Res spot(s) available",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "3",
+          "numSpotsAvailable": 0
+        }
+      ]
+    },
+    {
+      "scGroup": "5010",
+      "statusTotals": [
+        {
+          "total": 10,
+          "name": "Active",
+          "id": "1"
+        },
+        {
+          "total": 5,
+          "name": "Reserve",
+          "id": "2"
+        },
+        {
+          "total": 1,
+          "name": "Inj Res",
+          "id": "3"
+        }
+      ],
+      "scGroupScorerHeader": "Outfielder",
+      "header": {
+        "cells": [
+          {
+            "eventStr": true,
+            "sortDirection": 1,
+            "name": "Opponent",
+            "shortName": "Opp",
+            "key": "opponent"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORE",
+            "sortType": "SCORE",
+            "name": "Fantasy Points",
+            "width": 6.5,
+            "shortName": "FPts",
+            "key": "fpts"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "FPTS_PER_GAME",
+            "sortType": "FPTS_PER_GAME",
+            "name": "Average Fantasy Points per Game",
+            "shortName": "FP/G",
+            "key": "fptsPerGame"
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6060#-1",
+            "scipId": "5010#6060#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Games Played",
+            "width": 3.0,
+            "shortName": "GP",
+            "key": "5010#6060#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6120#-1",
+            "scipId": "5010#6120#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Minutes Played",
+            "width": 4.0,
+            "shortName": "Min",
+            "key": "5010#6120#-1",
+            "maxWidth": 4.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6090#-1",
+            "scipId": "5010#6090#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Goals",
+            "width": 3.0,
+            "shortName": "G",
+            "key": "5010#6090#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6002#-1",
+            "scipId": "5010#6002#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Key Passes (Assists on Shots) -- Player assists a shot (including goals)",
+            "width": 3.0,
+            "shortName": "KP",
+            "key": "5010#6002#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6362#-1",
+            "scipId": "5010#6362#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Assists (Total) -- Official Assists + Fantasy Assists",
+            "width": 3.0,
+            "shortName": "AT",
+            "key": "5010#6362#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6230#-1",
+            "scipId": "5010#6230#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Shots on Target",
+            "width": 3.0,
+            "shortName": "SOT",
+            "key": "5010#6230#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6256#-1",
+            "scipId": "5010#6256#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Tackles Won -- Total tackles won (winning possession or putting the ball out of play)",
+            "width": 3.0,
+            "shortName": "TkW",
+            "key": "5010#6256#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6039#-1",
+            "scipId": "5010#6039#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Dispossessed",
+            "width": 3.0,
+            "shortName": "DIS",
+            "key": "5010#6039#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5010#6280#-1",
+            "scipId": "5010#6280#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Yellow Cards",
+            "width": 3.0,
+            "shortName": "YC",
+            "key": "5010#6280#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5010#6190#-1",
+            "scipId": "5010#6190#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Red Cards -- If a player receives a red card and then has his red card rescinded at a later time, his red card will remain (i.e. he will have credit for both a red card and a red card rescinded).",
+            "width": 3.0,
+            "shortName": "RC",
+            "key": "5010#6190#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6029#-1",
+            "scipId": "5010#6029#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Accurate Crosses (No Corners) -- Same as Accurate Crosses, but excludes corners",
+            "width": 4.0,
+            "shortName": "ACNC",
+            "key": "5010#6029#-1",
+            "maxWidth": 4.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6108#-1",
+            "scipId": "5010#6108#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Interceptions -- Player intercepts a pass",
+            "width": 3.0,
+            "shortName": "Int",
+            "key": "5010#6108#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6016#-1",
+            "scipId": "5010#6016#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Effective Clearances -- Successful defensive clearance - where player under pressure kicks the ball clear of the defensive zone and/or out of play",
+            "width": 3.0,
+            "shortName": "CLR",
+            "key": "5010#6016#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6019#-1",
+            "scipId": "5010#6019#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Successful Dribbles (Contests Succeeded) -- Total dribbles where a player beats an opponent - no overruns",
+            "width": 3.0,
+            "shortName": "CoS",
+            "key": "5010#6019#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6009#-1",
+            "scipId": "5010#6009#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Blocked Shots -- Any goal attempt heading roughly on target toward goal which is blocked by a defender, where there are other defenders or a goalkeeper behind the blocker.",
+            "width": 3.0,
+            "shortName": "BS",
+            "key": "5010#6009#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6007#-1",
+            "scipId": "5010#6007#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Aerials Won -- Successful aerial duels (the definition of an aerial duel is that it is between two players - either both jumping or only one jumping and the other contesting the header by making it difficult to win - and one player has to win the contest with a header OR if it is between an outfield player and a goalkeeper then the goalkeeper is allowed to punch it clear)",
+            "width": 3.0,
+            "shortName": "AER",
+            "key": "5010#6007#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5010#6332#-1",
+            "scipId": "5010#6332#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Penalty Kicks Missed -- Number of penalty kicks where the shooter did not score",
+            "width": 3.0,
+            "shortName": "PKM",
+            "key": "5010#6332#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6175#-1",
+            "scipId": "5010#6175#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Penalty Kicks Drawn -- Player fouled within the penalty box (excludes any penalty kicks drawn for handballs)",
+            "width": 3.0,
+            "shortName": "PKD",
+            "key": "5010#6175#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5010#6105#-1",
+            "scipId": "5010#6105#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Own Goals -- Goals scored on own net",
+            "width": 3.0,
+            "shortName": "OG",
+            "key": "5010#6105#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": -1,
+            "sortKey": "SCORING_CATEGORY_5010#6101#-1",
+            "scipId": "5010#6101#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Goals Against Outfielders  -- Goals conceded by the team while the player was on the field. Any outfielder will get credit for this stat.",
+            "width": 3.0,
+            "shortName": "GAO",
+            "key": "5010#6101#-1",
+            "maxWidth": 3.0
+          },
+          {
+            "sortDirection": 1,
+            "sortKey": "SCORING_CATEGORY_5010#6249#-1",
+            "scipId": "5010#6249#-1",
+            "sortType": "SCORING_CATEGORY",
+            "name": "Clean Sheets On Field -- Awarded to a player who played at least 60 minutes and whose team gave up 0 goals during the time the player was on the field, even if a goal was scored after the player left the field",
+            "width": 3.0,
+            "shortName": "CS",
+            "key": "5010#6249#-1",
+            "maxWidth": 3.0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "scorer": {
+            "teamName": "Everton",
+            "urlName": "jarrad-branthwaite",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Everton.png",
+            "scorerId": "05l27",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 26, 1:53 PM: Branthwaite (hamstring) is on the bench...",
+                "typeId": "9"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110050",
+            "name": "Jarrad Branthwaite",
+            "teamShortName": "EVE",
+            "shortName": "J. Branthwaite"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "EVE 1<br/>@BHA 1 F",
+              "eventId": "06c2o"
+            },
+            {
+              "content": "9.5"
+            },
+            {
+              "content": "4.75"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "133"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Newcastle United",
+            "urlName": "lewis-hall",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Newcastle_United.png",
+            "scorerId": "05y9n",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 19, 6:29 PM: Hall generated two shots (zero on...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110101",
+            "name": "Lewis Hall",
+            "teamShortName": "NEW",
+            "shortName": "L. Hall"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "NEW 1<br/>@LIV 4 F",
+              "eventId": "06c2q"
+            },
+            {
+              "content": "123.75"
+            },
+            {
+              "content": "7.28"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "1,203"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "15"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "47"
+            },
+            {
+              "content": "26"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "3"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Bournemouth",
+            "urlName": "alex-jimenez",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Bournemouth.png",
+            "scorerId": "070gu",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 25, 3:00 PM: Jimenez scored one goal to go with two...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110034",
+            "name": "Alex Jim\u00e9nez",
+            "teamShortName": "BOU",
+            "shortName": "A. Jim\u00e9nez"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "BOU 2<br/>@WOL 0 F",
+              "eventId": "06c2u"
+            },
+            {
+              "content": "78.75"
+            },
+            {
+              "content": "3.94"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "1,405"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "27"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "25"
+            },
+            {
+              "content": "26"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "30"
+            },
+            {
+              "content": "3"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Newcastle United",
+            "urlName": "malick-thiaw",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Newcastle_United.png",
+            "scorerId": "0700p",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 5, 4:42 AM: Thiaw scored one goal to go with one...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110101",
+            "name": "Malick Thiaw",
+            "teamShortName": "NEW",
+            "shortName": "M. Thiaw"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "NEW 1<br/>@LIV 4 F",
+              "eventId": "06c2q"
+            },
+            {
+              "content": "166.5"
+            },
+            {
+              "content": "7.93"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "1,756"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "19"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "19"
+            },
+            {
+              "content": "118"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "70"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "30"
+            },
+            {
+              "content": "4"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "posId": "703",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "1"
+        },
+        {
+          "scorer": {
+            "teamName": "Manchester City",
+            "urlName": "rayan-cherki",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Manchester_City.png",
+            "scorerId": "06v07",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "702",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 29, 2:34 PM: Cherki scored one goal to go with two...",
+                "typeId": "9"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110080",
+            "name": "Rayan Cherki",
+            "teamShortName": "MCI",
+            "shortName": "R. Cherki"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "MCI 2<br/>@TOT 2 F",
+              "eventId": "06c2t"
+            },
+            {
+              "content": "205"
+            },
+            {
+              "content": "10.79"
+            },
+            {
+              "content": "19"
+            },
+            {
+              "content": "1,014"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "34"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "13"
+            },
+            {
+              "content": "22"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "28"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "10"
+            },
+            {
+              "content": "5"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Everton",
+            "urlName": "kiernan-dewsbury-hall",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Everton.png",
+            "scorerId": "05gcc",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "702",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 28, 12:17 PM: Dewsbury-Hall played 45 minutes off the...",
+                "typeId": "9"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110050",
+            "name": "Kiernan Dewsbury-Hall",
+            "teamShortName": "EVE",
+            "shortName": "K. Dewsbury-Hall"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "EVE 1<br/>@BHA 1 F",
+              "eventId": "06c2o"
+            },
+            {
+              "content": "136.5"
+            },
+            {
+              "content": "8.03"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "1,380"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "24"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "14"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "6"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "West Ham United",
+            "urlName": "mateus-goncalo-espanha-fernandes",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/West_Ham_United.png",
+            "scorerId": "06pe1",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "702",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 24, 9:36 AM: Fernandes scored a goal while taking...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110175",
+            "name": "Mateus Goncalo Espanha Fernandes",
+            "teamShortName": "WHU",
+            "shortName": "M. Espanha Fernandes"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "WHU 2<br/>@CHE 3 F",
+              "eventId": "06c2p"
+            },
+            {
+              "content": "179.5"
+            },
+            {
+              "content": "8.16"
+            },
+            {
+              "content": "22"
+            },
+            {
+              "content": "1,760"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "25"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "37"
+            },
+            {
+              "content": "23"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "23"
+            },
+            {
+              "content": "26"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "33"
+            },
+            {
+              "content": "2"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Crystal Palace",
+            "urlName": "yeremy-pino",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Crystal_Palace.png",
+            "scorerId": "070f9",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "702",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 19, 8:39 AM: Yeremy Pino scored one goal to go with...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110045",
+            "name": "Yeremy Pino",
+            "teamShortName": "CRY",
+            "shortName": "Y. Pino"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "CRY 1<br/>@NOT 1 F",
+              "eventId": "06c2s"
+            },
+            {
+              "content": "150.5"
+            },
+            {
+              "content": "6.84"
+            },
+            {
+              "content": "22"
+            },
+            {
+              "content": "1,547"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "35"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "27"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "18"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "6"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "posId": "702",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "1"
+        },
+        {
+          "scorer": {
+            "teamName": "Bournemouth",
+            "urlName": "eli-kroupi",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Bournemouth.png",
+            "scorerId": "06xza",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "701"
+            ],
+            "defaultPosId": "701",
+            "posShortNames": "F",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 8, 11:40 AM: Eli Kroupi scored one goal to go with...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "701"
+            ],
+            "teamId": "110034",
+            "name": "Eli Kroupi",
+            "teamShortName": "BOU",
+            "shortName": "E. Kroupi"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "701",
+          "cells": [
+            {
+              "content": "BOU 2<br/>@WOL 0 F",
+              "eventId": "06c2u"
+            },
+            {
+              "content": "118"
+            },
+            {
+              "content": "6.21"
+            },
+            {
+              "content": "19"
+            },
+            {
+              "content": "765"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "4"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "701"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Chelsea",
+            "urlName": "pedro-lomba-neto",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Chelsea.png",
+            "scorerId": "056iy",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "701"
+            ],
+            "defaultPosId": "701",
+            "posShortNames": "F",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 22, 9:35 AM: Neto had three shots (one on goal), 15...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "701"
+            ],
+            "teamId": "110040",
+            "name": "Pedro Neto",
+            "teamShortName": "CHE",
+            "shortName": "Pedro Neto"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "701",
+          "cells": [
+            {
+              "content": "WHU 2<br/>@CHE 3 F",
+              "eventId": "06c2p"
+            },
+            {
+              "content": "221.5"
+            },
+            {
+              "content": "9.23"
+            },
+            {
+              "content": "24"
+            },
+            {
+              "content": "1,865"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "38"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "19"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "18"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "33"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "10"
+            }
+          ],
+          "statusId": "1",
+          "eligiblePosIds": [
+            "701"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "posId": "701",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "1"
+        },
+        {
+          "scorer": {
+            "teamName": "Chelsea",
+            "urlName": "reece-james",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Chelsea.png",
+            "scorerId": "051k7",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 22, 9:33 AM: James generated two shots (zero on...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110040",
+            "name": "Reece James",
+            "teamShortName": "CHE",
+            "shortName": "R. James"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "WHU 2<br/>@CHE 3 F",
+              "eventId": "06c2p"
+            },
+            {
+              "content": "218"
+            },
+            {
+              "content": "9.48"
+            },
+            {
+              "content": "23"
+            },
+            {
+              "content": "1,530"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "28"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "27"
+            },
+            {
+              "content": "32"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "27"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "16"
+            },
+            {
+              "content": "7"
+            }
+          ],
+          "statusId": "2",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Brighton",
+            "urlName": "yankuba-minteh",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Brighton_and_Hove_Albion.png",
+            "scorerId": "06c6g",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "701",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 23, 5:03 AM: Minteh is not fit to play a full game,...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110240",
+            "name": "Yankuba Minteh",
+            "teamShortName": "BHA",
+            "shortName": "Y. Minteh"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "EVE 1<br/>@BHA 1 F",
+              "eventId": "06c2o"
+            },
+            {
+              "content": "234"
+            },
+            {
+              "content": "10.64"
+            },
+            {
+              "content": "22"
+            },
+            {
+              "content": "1,599"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "30"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "24"
+            },
+            {
+              "content": "23"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "15"
+            },
+            {
+              "content": "10"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "49"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "13"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "25"
+            },
+            {
+              "content": "6"
+            }
+          ],
+          "statusId": "2",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Arsenal",
+            "urlName": "martin-odegaard",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Arsenal.png",
+            "scorerId": "05r9b",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "702"
+            ],
+            "defaultPosId": "702",
+            "posShortNames": "M",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 31, 10:16 PM: Odegaard assisted once to go with three...",
+                "typeId": "9"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "702"
+            ],
+            "teamId": "110000",
+            "name": "Martin Odegaard",
+            "teamShortName": "ARS",
+            "shortName": "M. Odegaard"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "702",
+          "cells": [
+            {
+              "content": "ARS 4<br/>@LEE 0 F",
+              "eventId": "06c7d"
+            },
+            {
+              "content": "136"
+            },
+            {
+              "content": "7.56"
+            },
+            {
+              "content": "18"
+            },
+            {
+              "content": "1,007"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "29"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "10"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "6"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "10"
+            },
+            {
+              "content": "4"
+            }
+          ],
+          "statusId": "2",
+          "eligiblePosIds": [
+            "702"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Chelsea",
+            "urlName": "joao-pedro-junqueira-de-jesus",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Chelsea.png",
+            "scorerId": "05g2o",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "701"
+            ],
+            "defaultPosId": "701",
+            "posShortNames": "F",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Feb 1, 9:47 PM: Joao Pedro scored one goal and assisted...",
+                "typeId": "14"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "701"
+            ],
+            "teamId": "110040",
+            "name": "Joao Pedro",
+            "teamShortName": "CHE",
+            "shortName": "Joao Pedro"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "701",
+          "cells": [
+            {
+              "content": "WHU 2<br/>@CHE 3 F",
+              "eventId": "06c2p"
+            },
+            {
+              "content": "236.5"
+            },
+            {
+              "content": "9.85"
+            },
+            {
+              "content": "24"
+            },
+            {
+              "content": "1,720"
+            },
+            {
+              "content": "9"
+            },
+            {
+              "content": "23"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "18"
+            },
+            {
+              "content": "13"
+            },
+            {
+              "content": "36"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "22"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "47"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "9"
+            }
+          ],
+          "statusId": "2",
+          "eligiblePosIds": [
+            "701"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "scorer": {
+            "teamName": "Newcastle United",
+            "urlName": "nick-woltemade",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Newcastle_United.png",
+            "scorerId": "070g7",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "701"
+            ],
+            "defaultPosId": "701",
+            "posShortNames": "F",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 9, 5:43 PM: Woltemade assisted once to go with one...",
+                "typeId": "8"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "701"
+            ],
+            "teamId": "110101",
+            "name": "Nick Woltemade",
+            "teamShortName": "NEW",
+            "shortName": "N. Woltemade"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2"
+          ],
+          "posId": "701",
+          "cells": [
+            {
+              "content": "NEW 1<br/>@LIV 4 F",
+              "eventId": "06c2q"
+            },
+            {
+              "content": "142.5"
+            },
+            {
+              "content": "6.79"
+            },
+            {
+              "content": "21"
+            },
+            {
+              "content": "1,362"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "11"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "31"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "18"
+            },
+            {
+              "content": "8"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "30"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "20"
+            },
+            {
+              "content": "6"
+            }
+          ],
+          "statusId": "2",
+          "eligiblePosIds": [
+            "701"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "numSpotsAvailableText": "Reserve spot(s) available",
+          "description": "Reserve spot(s) available",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "2",
+          "numSpotsAvailable": 0
+        },
+        {
+          "scorer": {
+            "teamName": "Arsenal",
+            "urlName": "riccardo-calafiori",
+            "headshotUrl": "https://fantraximg.com/assets/images/logos/sportsteam/epl/Arsenal.png",
+            "scorerId": "06nu7",
+            "disableLineupChange": true,
+            "teamLogo": true,
+            "posIdsNoFlex": [
+              "703"
+            ],
+            "defaultPosId": "703",
+            "posShortNames": "D",
+            "team": false,
+            "icons": [
+              {
+                "tooltip": "Jan 28, 2:08 PM: Calafiori (strain) is in the starting...",
+                "typeId": "9"
+              }
+            ],
+            "rookie": false,
+            "minorsEligible": false,
+            "posIds": [
+              "703"
+            ],
+            "teamId": "110000",
+            "name": "Riccardo Calafiori",
+            "teamShortName": "ARS",
+            "shortName": "R. Calafiori"
+          },
+          "eligibleStatusIds": [
+            "1",
+            "2",
+            "3"
+          ],
+          "posId": "703",
+          "cells": [
+            {
+              "content": "ARS 4<br/>@LEE 0 F",
+              "eventId": "06c7d"
+            },
+            {
+              "content": "157.25"
+            },
+            {
+              "content": "9.25"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "1,268"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "4"
+            },
+            {
+              "content": "2"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "17"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "5"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "3"
+            },
+            {
+              "content": "14"
+            },
+            {
+              "content": "43"
+            },
+            {
+              "content": "12"
+            },
+            {
+              "content": "1"
+            },
+            {
+              "content": "30"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "0"
+            },
+            {
+              "content": "7"
+            },
+            {
+              "content": "9"
+            }
+          ],
+          "statusId": "3",
+          "eligiblePosIds": [
+            "703"
+          ],
+          "actions": [
+            {
+              "typeId": "4"
+            }
+          ]
+        },
+        {
+          "numSpotsAvailableText": "Inj Res spot(s) available",
+          "description": "Inj Res spot(s) available",
+          "cells": [
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            },
+            {
+              "content": ""
+            }
+          ],
+          "statusId": "3",
+          "numSpotsAvailable": 0
+        }
+      ]
+    }
+  ],
+  "displayedSelections": {
+    "displayedStatsType": "1",
+    "displayedPeriod": 24,
+    "adminMode": false,
+    "displayedView": "STATS",
+    "lineupChangeSystem": "EASY_CLICK",
+    "displayedStartDate": 1755230400000,
+    "displayedScoringCategoryType": "5",
+    "displayedFantasyTeamId": "1t98phesmd5cytbv",
+    "displayedSeasonOrProjection": {
+      "code": "SEASON_925_YEAR_TO_DATE",
+      "endDate": 1779681599000,
+      "name": "2025-26 - YTD",
+      "showGoBackDays": true,
+      "shortName": "2025-26 Reg - YTD",
+      "timeframeTypeCode": "YEAR_TO_DATE",
+      "startDate": 1755230400000
+    },
+    "displayedEndDate": 1769922000000
+  },
+  "fantasyTeams": [
+    {
+      "logoUrl256": "https://fantraximg.com/logos/zjv/tmLogo_zjvn201vmdg9e55y_256.webp",
+      "name": "Arnie-senal",
+      "id": "mqmbxwrtmdg6mr2l",
+      "logoUrl128": "https://fantraximg.com/logos/zjv/tmLogo_zjvn201vmdg9e55y_128.webp",
+      "shortName": "Arnie",
+      "commissioner": false,
+      "logoId": "zjvn201vmdg9e55y"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/pnv/tmLogo_pnvz41fvme0qwyhc_256.webp",
+      "name": "Cold FC",
+      "id": "ja8ivcs5mdew697k",
+      "logoUrl128": "https://fantraximg.com/logos/pnv/tmLogo_pnvz41fvme0qwyhc_128.webp",
+      "shortName": "suda",
+      "commissioner": false,
+      "logoId": "pnvz41fvme0qwyhc"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/r57/tmLogo_r57ihu86me34rsw4_256.webp",
+      "name": "Estimated Profit",
+      "id": "hzn5pbmkmdewwr84",
+      "logoUrl128": "https://fantraximg.com/logos/r57/tmLogo_r57ihu86me34rsw4_128.webp",
+      "shortName": "IPO",
+      "commissioner": false,
+      "logoId": "r57ihu86me34rsw4"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/u4s/tmLogo_u4skb6rwme0qjgc5_256.webp",
+      "name": "FC Purulona",
+      "id": "1kg0cgl2mdmidwrt",
+      "logoUrl128": "https://fantraximg.com/logos/u4s/tmLogo_u4skb6rwme0qjgc5_128.webp",
+      "shortName": "FCP",
+      "commissioner": false,
+      "logoId": "u4skb6rwme0qjgc5"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/qrm/tmLogo_qrmjzklwmfhjz0yr_256.webp",
+      "name": "FC VAR",
+      "id": "1t98phesmd5cytbv",
+      "logoUrl128": "https://fantraximg.com/logos/qrm/tmLogo_qrmjzklwmfhjz0yr_128.webp",
+      "shortName": "VAR",
+      "commissioner": true,
+      "logoId": "qrmjzklwmfhjz0yr"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/blue_red_lightblue_128.webp",
+      "name": "hdiamondpott",
+      "id": "0h1ewo4wmdizdkhf",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/blue_red_lightblue_128.webp",
+      "shortName": "hdiamond",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/to8/tmLogo_to8ytxfrmdf3bkxa_256.webp",
+      "name": "Point Loma Parrots",
+      "id": "x12beletmdf35tm2",
+      "logoUrl128": "https://fantraximg.com/logos/to8/tmLogo_to8ytxfrmdf3bkxa_128.webp",
+      "shortName": "PLP",
+      "commissioner": false,
+      "logoId": "to8ytxfrmdf3bkxa"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/blue_yellow_black_128.webp",
+      "name": "sduvuuru",
+      "id": "p7p53wgimdj1ldb3",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/blue_yellow_black_128.webp",
+      "shortName": "sduvuuru",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/gloves/purple_pink_white_128.webp",
+      "name": "Smip Estonian",
+      "id": "pmzfm9z8mdg3f44o",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/gloves/purple_pink_white_128.webp",
+      "shortName": "Smip",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/logos/ojo/tmLogo_ojobis4fmdg5wyy1_256.webp",
+      "name": "Toadenham Frogspur",
+      "id": "39gqvc1wmdg4tnfu",
+      "logoUrl128": "https://fantraximg.com/logos/ojo/tmLogo_ojobis4fmdg5wyy1_128.webp",
+      "shortName": "Ari",
+      "commissioner": false,
+      "logoId": "ojobis4fmdg5wyy1"
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/gloves/blue_green_128.webp",
+      "name": "Traderjoe18",
+      "id": "8j17gbjmmdewvf8d",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/gloves/blue_green_128.webp",
+      "shortName": "Traderjo",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/green_black_red_128.webp",
+      "name": "Wallalujah FC",
+      "id": "af1qhccfmdhlee7c",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/green_black_red_128.webp",
+      "shortName": "nilaypit",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/jerseys/pink_black_128.webp",
+      "name": "WayneRooney10",
+      "id": "cvw1xxnsmdg4tqui",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/jerseys/pink_black_128.webp",
+      "shortName": "WayneRoo",
+      "commissioner": false
+    },
+    {
+      "logoUrl256": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/pink_purple_oragne_128.webp",
+      "name": "youngmoon",
+      "id": "s5ksmx70mdmj1kxc",
+      "logoUrl128": "https://fantraximg.com/assets/images/icons/fantasyteams/soccer/shoe/pink_purple_oragne_128.webp",
+      "shortName": "youngmoo",
+      "commissioner": false
+    }
+  ],
+  "displayedLists": {
+    "statsTypes": [
+      {
+        "code": "REAL",
+        "name": "EPL",
+        "id": "1"
+      },
+      {
+        "code": "FANTASY",
+        "name": "Fantasy Team",
+        "id": "2"
+      },
+      {
+        "code": "FANTASY_FULL",
+        "name": "Full Fantasy Team",
+        "id": "3"
+      }
+    ],
+    "goBackDays": [
+      1,
+      7,
+      14,
+      30,
+      60
+    ],
+    "scoringCategoryTypes": [
+      {
+        "value": "Tracked",
+        "key": "5"
+      },
+      {
+        "value": "Standard",
+        "key": "1"
+      }
+    ],
+    "seasonOrProjections": [
+      {
+        "code": "PROJECTION_0_925_EVENT_PROJECTED_WEEKLY",
+        "endDate": 1779681599000,
+        "name": "Projected - Per Game",
+        "shortName": "Proj - Per Game",
+        "timeframeTypeCode": "PROJECTED_WEEKLY",
+        "startDate": 1755230400000
+      },
+      {
+        "code": "PROJECTION_0_925_SEASON",
+        "endDate": 1779681599000,
+        "name": "Projected - Season",
+        "shortName": "Proj - Season",
+        "timeframeTypeCode": "PROJECTED_SEASON",
+        "startDate": 1755230400000
+      },
+      {
+        "code": "SEASON_925_YEAR_TO_DATE",
+        "endDate": 1779681599000,
+        "name": "2025-26 - YTD",
+        "showGoBackDays": true,
+        "shortName": "2025-26 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1755230400000
+      },
+      {
+        "code": "SEASON_925_BY_PERIOD",
+        "endDate": 1779681599000,
+        "name": "2025-26 - Game Week",
+        "showGoBackDays": true,
+        "shortName": "2025-26 Reg - Game Week",
+        "timeframeTypeCode": "BY_PERIOD",
+        "startDate": 1755230400000
+      },
+      {
+        "code": "SEASON_925_BY_DATE",
+        "endDate": 1779681599000,
+        "name": "2025-26 - Dates",
+        "showGoBackDays": true,
+        "shortName": "2025-26 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1755230400000
+      },
+      {
+        "code": "SEASON_924_YEAR_TO_DATE",
+        "endDate": 1748231999000,
+        "name": "2024-25 - YTD",
+        "shortName": "2024-25 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1723780800000
+      },
+      {
+        "code": "SEASON_924_BY_DATE",
+        "endDate": 1748231999000,
+        "name": "2024-25 - Dates",
+        "shortName": "2024-25 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1723780800000
+      },
+      {
+        "code": "SEASON_923_YEAR_TO_DATE",
+        "endDate": 1716177599000,
+        "name": "2023-24 - YTD",
+        "shortName": "2023-24 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1691726400000
+      },
+      {
+        "code": "SEASON_923_BY_DATE",
+        "endDate": 1716177599000,
+        "name": "2023-24 - Dates",
+        "shortName": "2023-24 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1691726400000
+      },
+      {
+        "code": "SEASON_922_YEAR_TO_DATE",
+        "endDate": 1685332799000,
+        "name": "2022-23 - YTD",
+        "shortName": "2022-23 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1659672000000
+      },
+      {
+        "code": "SEASON_922_BY_DATE",
+        "endDate": 1685332799000,
+        "name": "2022-23 - Dates",
+        "shortName": "2022-23 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1659672000000
+      },
+      {
+        "code": "SEASON_921_YEAR_TO_DATE",
+        "endDate": 1653278399000,
+        "name": "2021-22 - YTD",
+        "shortName": "2021-22 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1628827200000
+      },
+      {
+        "code": "SEASON_921_BY_DATE",
+        "endDate": 1653278399000,
+        "name": "2021-22 - Dates",
+        "shortName": "2021-22 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1628827200000
+      },
+      {
+        "code": "SEASON_920_YEAR_TO_DATE",
+        "endDate": 1621828799000,
+        "name": "2020-21 - YTD",
+        "shortName": "2020-21 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1599883200000
+      },
+      {
+        "code": "SEASON_920_BY_DATE",
+        "endDate": 1621828799000,
+        "name": "2020-21 - Dates",
+        "shortName": "2020-21 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1599883200000
+      },
+      {
+        "code": "SEASON_919_YEAR_TO_DATE",
+        "endDate": 1595822399000,
+        "name": "2019-20 - YTD",
+        "shortName": "2019-20 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1565323200000
+      },
+      {
+        "code": "SEASON_919_BY_DATE",
+        "endDate": 1595822399000,
+        "name": "2019-20 - Dates",
+        "shortName": "2019-20 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1565323200000
+      },
+      {
+        "code": "SEASON_918_YEAR_TO_DATE",
+        "endDate": 1557719999000,
+        "name": "2018-19 - YTD",
+        "shortName": "2018-19 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1533873600000
+      },
+      {
+        "code": "SEASON_918_BY_DATE",
+        "endDate": 1557719999000,
+        "name": "2018-19 - Dates",
+        "shortName": "2018-19 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1533873600000
+      },
+      {
+        "code": "SEASON_917_YEAR_TO_DATE",
+        "endDate": 1526443199000,
+        "name": "2017-18 - YTD",
+        "shortName": "2017-18 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1502424000000
+      },
+      {
+        "code": "SEASON_917_BY_DATE",
+        "endDate": 1526443199000,
+        "name": "2017-18 - Dates",
+        "shortName": "2017-18 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1502424000000
+      },
+      {
+        "code": "SEASON_916_YEAR_TO_DATE",
+        "endDate": 1495425599000,
+        "name": "2016-17 - YTD",
+        "shortName": "2016-17 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1471060800000
+      },
+      {
+        "code": "SEASON_916_BY_DATE",
+        "endDate": 1495425599000,
+        "name": "2016-17 - Dates",
+        "shortName": "2016-17 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1471060800000
+      },
+      {
+        "code": "SEASON_915_YEAR_TO_DATE",
+        "endDate": 1463543999000,
+        "name": "2015-16 - YTD",
+        "shortName": "2015-16 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1439006400000
+      },
+      {
+        "code": "SEASON_915_BY_DATE",
+        "endDate": 1463543999000,
+        "name": "2015-16 - Dates",
+        "shortName": "2015-16 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1439006400000
+      },
+      {
+        "code": "SEASON_914_YEAR_TO_DATE",
+        "endDate": 1432526399000,
+        "name": "2014-15 - YTD",
+        "shortName": "2014-15 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1408161600000
+      },
+      {
+        "code": "SEASON_914_BY_DATE",
+        "endDate": 1432526399000,
+        "name": "2014-15 - Dates",
+        "shortName": "2014-15 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1408161600000
+      },
+      {
+        "code": "SEASON_913_YEAR_TO_DATE",
+        "endDate": 1399867199000,
+        "name": "2013-14 - YTD",
+        "shortName": "2013-14 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1376712000000
+      },
+      {
+        "code": "SEASON_913_BY_DATE",
+        "endDate": 1399867199000,
+        "name": "2013-14 - Dates",
+        "shortName": "2013-14 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1376712000000
+      },
+      {
+        "code": "SEASON_912_YEAR_TO_DATE",
+        "endDate": 1369022399000,
+        "name": "2012-13 - YTD",
+        "shortName": "2012-13 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1345262400000
+      },
+      {
+        "code": "SEASON_912_BY_DATE",
+        "endDate": 1369022399000,
+        "name": "2012-13 - Dates",
+        "shortName": "2012-13 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1345262400000
+      },
+      {
+        "code": "SEASON_911_YEAR_TO_DATE",
+        "endDate": 1336967999000,
+        "name": "2011-12 - YTD",
+        "shortName": "2011-12 Reg - YTD",
+        "timeframeTypeCode": "YEAR_TO_DATE",
+        "startDate": 1313208000000
+      },
+      {
+        "code": "SEASON_911_BY_DATE",
+        "endDate": 1336967999000,
+        "name": "2011-12 - Dates",
+        "shortName": "2011-12 Reg - Dates",
+        "timeframeTypeCode": "BY_DATE",
+        "startDate": 1313208000000
+      }
+    ],
+    "periodList": [
+      "1 (Aug 15 - Aug 21)",
+      "2 (Aug 22 - Aug 28)",
+      "3 (Aug 29 - Sep 11)",
+      "4 (Sep 12 - Sep 18)",
+      "5 (Sep 19 - Sep 25)",
+      "6 (Sep 26 - Oct 2)",
+      "7 (Oct 3 - Oct 16)",
+      "8 (Oct 17 - Oct 23)",
+      "9 (Oct 24 - Oct 30)",
+      "10 (Oct 31 - Nov 6)",
+      "11 (Nov 7 - Nov 20)",
+      "12 (Nov 21 - Nov 27)",
+      "13 (Nov 28 - Dec 1)",
+      "14 (Dec 2 - Dec 4)",
+      "15 (Dec 5 - Dec 11)",
+      "16 (Dec 12 - Dec 18)",
+      "17 (Dec 19 - Dec 25)",
+      "18 (Dec 26 - Dec 28)",
+      "19 (Dec 29 - Jan 1)",
+      "20 (Jan 2 - Jan 5)",
+      "21 (Jan 6 - Jan 15)",
+      "22 (Jan 16 - Jan 22)",
+      "23 (Jan 23 - Jan 29)",
+      "24 (Jan 30 - Feb 5)",
+      "25 (Feb 6 - Feb 9)",
+      "26 (Feb 10 - Feb 19)",
+      "27 (Feb 20 - Feb 26)",
+      "28 (Feb 27 - Mar 2)",
+      "29 (Mar 3 - Mar 12)",
+      "30 (Mar 13 - Mar 19)",
+      "31 (Mar 20 - Apr 9)",
+      "32 (Apr 10 - Apr 16)",
+      "33 (Apr 17 - Apr 23)",
+      "34 (Apr 24 - Apr 30)",
+      "35 (May 1 - May 7)",
+      "36 (May 8 - May 14)",
+      "37 (May 15 - May 21)",
+      "38 (May 22 - May 24)"
+    ]
+  },
+  "availableActiveViewType": "ALL_ROWS",
+  "commissioner": true,
+  "leagueNotices": []
+}

@@ -1,0 +1,84 @@
+/* Base Overrides */
+body {
+    background-color: #0f172a;
+    /* Slate 900 */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Tabs */
+.tab-btn {
+    color: #94a3b8;
+    /* Slate 400 */
+}
+
+.tab-btn:hover {
+    color: #e2e8f0;
+    /* Slate 200 */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: rgba(59, 130, 246, 0.2);
+    /* Blue 500 alpha */
+    color: #60a5fa;
+    /* Blue 400 */
+    font-weight: 600;
+}
+
+/* Matchup Card */
+.matchup-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.matchup-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Tables */
+table th {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+table td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}

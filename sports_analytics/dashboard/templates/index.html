@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy League Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        @media print {
+
+            /* 1. Reset Page & Force Dark Mode */
+            @page {
+                size: auto;
+                margin: 0mm;
+                /* Minimal margin, let body padding handle it */
+            }
+
+            body,
+            html {
+                background-color: #111827 !important;
+                /* Dark BG */
+                color: white !important;
+                height: auto !important;
+                overflow: visible !important;
+                -webkit-print-color-adjust: exact !important;
+                /* Force background colors */
+                print-color-adjust: exact !important;
+            }
+
+            /* 2. Hide specific top-level UI elements */
+            body>div>header {
+                display: none !important;
+            }
+
+            #sidebar-menu,
+            #sidebar-overlay {
+                display: none !important;
+            }
+
+            .view-section:not(#view-chat) {
+                display: none !important;
+            }
+
+            #chat-input-area,
+            #view-chat button,
+            #view-chat .glass-panel>div:first-child {
+                display: none !important;
+            }
+
+            /* 3. Style the Chat View for Print */
+            #view-chat {
+                display: block !important;
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                /* Add padding for print */
+                overflow: visible !important;
+            }
+
+            /* 4. Fix Container Overflow for Page Breaks */
+            /* The glass panel needs to lose its "panel" properties to flow naturally */
+            #view-chat .glass-panel {
+                display: block !important;
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                /* Remove panel bg, just use body bg */
+                overflow: visible !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* 5. Messages Container */
+            #chat-messages {
+                display: block !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                background-color: transparent !important;
+                width: 100% !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Print Header */
+            #print-header {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 30px;
+                border-bottom: 1px solid #374151;
+                padding-bottom: 20px;
+                color: white !important;
+            }
+
+            #print-header h1 {
+                color: #60a5fa !important;
+            }
+
+            /* Blue-400 */
+            #print-header h2 {
+                color: #d1d5db !important;
+            }
+
+            /* Gray-300 */
+
+            /* Restore Message Colors for Print */
+            #chat-messages * {
+                color: inherit !important;
+                /* Respect original text colors */
+                text-shadow: none !important;
+            }
+
+            /* Chat Bubbles */
+            .rounded-lg {
+                /* Keep the dark bubble look but ensure it breaks */
+                background-color: #1f2937 !important;
+                /* Gray-800 */
+                border: 1px solid #374151 !important;
+                /* Gray-700 */
+                color: #f3f4f6 !important;
+                /* Gray-100 */
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                page-break-inside: auto !important;
+                /* Allow breaking INSIDE long bubbles */
+                margin-bottom: 15px !important;
+            }
+
+            /* Markdown Content Paragraphs */
+            .rounded-lg p {
+                page-break-inside: auto !important;
+                widows: 2;
+                orphans: 2;
+            }
+        }
+
+        /* content for print header */
+        #print-header {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans antialiased">
+    <div class="w-full max-w-[98%] mx-auto px-2 py-4 md:px-4 md:py-8">
+        <header
+            class="mb-4 md:mb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <h1
+                    class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                    Fantasy Premier League
+                </h1>
+                <p class="text-gray-400 mt-1">Season 25/26 &bull; Week <span id="current-week-display">--</span></p>
+            </div>
+            <!-- Menu Button -->
+            <button onclick="toggleSidebar()"
+                class="p-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors z-50 relative">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </header>
+
+        <!-- Sidebar Navigation Overlay -->
+        <div id="sidebar-overlay" onclick="toggleSidebar()"
+            class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300">
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <div id="sidebar-menu"
+            class="fixed top-0 right-0 h-full w-64 bg-gray-900 border-l border-gray-700 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+
+            <div class="flex justify-between items-center mb-8 border-b border-gray-800 pb-4">
+                <h3 class="text-xl font-bold text-white">Menu</h3>
+                <button onclick="toggleSidebar()" class="text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="flex flex-col space-y-2">
+                <button onclick="switchTab('standings')" id="nav-standings"
+                    class="nav-item active px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all flex items-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <span>Standings</span>
+                </button>
+                <button onclick="switchTab('matchups')" id="nav-matchups"
+                    class="nav-item px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all flex items-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span>Matchups</span>
+                </button>
+                <button onclick="switchTab('stats')" id="nav-stats"
+                    class="nav-item px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all flex items-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                    </svg>
+                    <span>League Stats</span>
+                </button>
+                <button onclick="switchTab('waivers')" id="nav-waivers"
+                    class="nav-item px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all flex items-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                        </path>
+                    </svg>
+                    <span>Waivers</span>
+                </button>
+                <button onclick="switchTab('info')" id="nav-info"
+                    class="nav-item px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all flex items-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>League Info</span>
+                </button>
+                <button onclick="switchTab('chat')" id="nav-chat"
+                    class="nav-item px-4 py-3 text-left rounded-lg text-gray-300 hover:bg-blue-900/30 hover:text-blue-300 transition-all flex items-center space-x-3 mt-4 border-t border-gray-800 pt-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                        </path>
+                    </svg>
+                    <span>Commissioner Bot</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- STANDINGS VIEW -->
+        <main id="view-standings" class="view-section active">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- Standard Standings -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-300">Standard Standings</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left min-w-[500px]" id="table-standard">
+                            <thead class="text-gray-400 border-b border-gray-700">
+                                <tr>
+                                    <th class="py-2">Rank</th>
+                                    <th class="py-2">Team</th>
+                                    <th class="py-2 text-center text-xs">Rec</th>
+                                    <th class="py-2 text-right">Pts</th>
+                                    <th class="py-2 text-right">PF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS inserts here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Median Standings -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-purple-300">vs. Median</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left min-w-[500px]" id="table-median">
+                            <thead class="text-gray-400 border-b border-gray-700">
+                                <tr>
+                                    <th class="py-2">Rank</th>
+                                    <th class="py-2">Team</th>
+                                    <th class="py-2 text-center text-xs">Rec</th>
+                                    <th class="py-2 text-right">Pts</th>
+                                    <th class="py-2 text-right">PF</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Optimal Standings -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-green-300">Optimal</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left min-w-[500px]" id="table-optimal">
+                            <thead class="text-gray-400 border-b border-gray-700">
+                                <tr>
+                                    <th class="py-2">Rank</th>
+                                    <th class="py-2">Team</th>
+                                    <th class="py-2 text-center text-xs">Rec</th>
+                                    <th class="py-2 text-right">Pts</th>
+                                    <th class="py-2 text-right">PF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5" class="py-4 text-center text-gray-500">Coming Soon</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Champions League -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4 text-yellow-300">Champions League</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left min-w-[500px]" id="table-champleague">
+                            <thead class="text-gray-400 border-b border-gray-700">
+                                <tr>
+                                    <th class="py-2">Team</th>
+                                    <th class="py-2 text-center">W</th>
+                                    <th class="py-2 text-center">D</th>
+                                    <th class="py-2 text-center">L</th>
+                                    <th class="py-2 text-right">Pts</th>
+                                    <th class="py-2 text-right">FPts</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Lingineni Cup Bracket Section -->
+                <div class="glass-panel p-6 rounded-xl xl:col-span-2">
+                    <h2 class="text-xl font-bold mb-4 flex items-center space-x-2">
+                        <span class="text-2xl">🏆</span>
+                        <span
+                            class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">Lingineni
+                            Cup Bracket</span>
+                    </h2>
+                    <div id="cup-bracket-container" class="overflow-x-auto min-h-[300px] flex items-center">
+                        <!-- Bracket Rendered via JS -->
+                        <div class="w-full text-center text-white/30">Loading Bracket...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- MATCHUPS VIEW -->
+        <main id="view-matchups" class="view-section hidden">
+            <div class="mb-6 flex items-center justify-between">
+                <h2 class="text-2xl font-semibold text-gray-200">Matchups</h2>
+                <div class="relative">
+                    <select id="week-selector" onchange="loadMatchups(this.value)"
+                        class="bg-gray-800 text-white border border-gray-700 rounded px-3 py-2 appearance-none pr-8">
+                        <!-- Options filled by JS -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="matchups-grid">
+                <!-- Matchup Cards injected here -->
+            </div>
+
+            <!-- Lingineni Cup Matchups -->
+            <div id="cup-matchups-section" class="mt-8 hidden">
+                <div class="flex items-center mb-4">
+                    <h2 class="text-xl font-bold text-orange-400 mr-3">🏆 Lingineni Cup</h2>
+                    <span
+                        class="bg-orange-500/20 text-orange-300 text-xs px-2 py-1 rounded border border-orange-500/30">Knockout
+                        Stage</span>
+                </div>
+                <div id="cup-matchups-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- Champions League Matchups -->
+            <div id="cl-matchups-section" class="mt-8 hidden">
+                <div class="flex items-center mb-4">
+                    <h2 class="text-xl font-bold text-yellow-300 mr-3">Champions League</h2>
+                    <span
+                        class="bg-yellow-400/20 text-yellow-300 text-xs px-2 py-1 rounded border border-yellow-400/30">Matchday</span>
+                </div>
+                <div id="cl-matchups-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </main>
+
+        <!-- STATS VIEW -->
+        <main id="view-stats" class="view-section hidden">
+
+
+            <!-- Superlatives Row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8"
+                id="stats-superlatives">
+                <!-- Injected via JS -->
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Form Table -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Form Guide <span
+                            class="text-sm font-normal text-gray-400">(Last 5)</span></h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-gray-500 border-b border-gray-700">
+                                <tr>
+                                    <th class="pb-2">Team</th>
+                                    <th class="pb-2 text-center">Avg</th>
+                                    <th class="pb-2 text-right">Form</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stats-form-table">
+                                <!-- Injected -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Season Trends - Two Charts Stacked -->
+                <div class="glass-panel p-6 rounded-xl mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Season Trends</h3>
+
+                    <!-- Fantasy Points Chart -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold mb-2 text-gray-300">Fantasy Points</h4>
+                        <div class="relative h-64 w-full">
+                            <canvas id="seasonTrendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Table Points Chart -->
+                    <div>
+                        <h4 class="text-sm font-semibold mb-2 text-gray-300">League Points</h4>
+                        <div class="relative h-64 w-full">
+                            <canvas id="tablePointsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Extremes (Part of Stats View) -->
+            <div class="glass-panel p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-4 text-purple-400">Weekly Highs & Lows</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-[1200px] w-full text-sm text-left">
+                        <thead class="text-gray-500 border-b border-gray-700">
+                            <tr>
+                                <th class="pb-2">Week</th>
+                                <th class="pb-2">High Team</th>
+                                <th class="pb-2 text-right">Score</th>
+                                <th class="pb-2 pl-8">Low Team</th>
+                                <th class="pb-2 text-right">Score</th>
+                                <th class="pb-2 pl-8">Most Eff.</th>
+                                <th class="pb-2 text-right">Score / Opt</th>
+                                <th class="pb-2 pl-8">Least Eff.</th>
+                                <th class="pb-2 text-right">Score / Opt</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stats-extremes-table">
+                            <!-- Injected -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- WAIVERS VIEW -->
+        <main id="view-waivers" class="view-section hidden">
+            <div class="glass-panel p-6 rounded-xl">
+                <!-- Waivers Header -->
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-cyan-400">Available Free Agents</h2>
+                    <div class="text-xs text-gray-500" id="waivers-week-display">Week 24</div>
+                </div>
+
+                <!-- Controls: Tabs + Filter Toggle -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex bg-gray-800 rounded-lg p-1 space-x-1">
+                        <button onclick="setWaiversView('season')" id="btn-view-season"
+                            class="px-4 py-1.5 text-xs font-medium rounded-md text-white bg-gray-700 shadow-sm transition-colors">
+                            Season Totals
+                        </button>
+                        <button onclick="setWaiversView('per_game')" id="btn-view-per_game"
+                            class="px-4 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors">
+                            Per Game
+                        </button>
+                        <button onclick="setWaiversView('per_90')" id="btn-view-per_90"
+                            class="px-4 py-1.5 text-xs font-medium rounded-md text-gray-400 hover:text-white hover:bg-gray-800 transition-colors">
+                            Per 90
+                        </button>
+                    </div>
+
+                    <button onclick="toggleFilterPanel()"
+                        class="flex items-center space-x-1 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white text-xs font-medium rounded-lg border border-gray-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                        </svg>
+                        <span>Filters</span>
+                    </button>
+                </div>
+
+                <!-- Filter Panel (Hidden by default) -->
+                <div id="waiver-filter-panel"
+                    class="hidden mb-4 p-4 bg-gray-800/80 border border-gray-700 rounded-lg shadow-lg">
+                    <div class="flex flex-col space-y-4">
+
+                        <!-- Row 1: Positions & Teams -->
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <!-- Positions -->
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs text-gray-400 font-bold uppercase">Pos:</span>
+                                <div class="flex space-x-1" id="filter-pos-group">
+                                    <button onclick="togglePosFilter('G')" id="filter-pos-g"
+                                        class="px-2 py-1 text-xs font-mono rounded border border-gray-600 text-gray-400 hover:border-gray-500">GK</button>
+                                    <button onclick="togglePosFilter('D')" id="filter-pos-d"
+                                        class="px-2 py-1 text-xs font-mono rounded border border-gray-600 text-gray-400 hover:border-gray-500">D</button>
+                                    <button onclick="togglePosFilter('M')" id="filter-pos-m"
+                                        class="px-2 py-1 text-xs font-mono rounded border border-gray-600 text-gray-400 hover:border-gray-500">M</button>
+                                    <button onclick="togglePosFilter('F')" id="filter-pos-f"
+                                        class="px-2 py-1 text-xs font-mono rounded border border-gray-600 text-gray-400 hover:border-gray-500">F</button>
+                                </div>
+                            </div>
+
+                            <!-- Team Dropdown -->
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs text-gray-400 font-bold uppercase">Team:</span>
+                                <select id="filter-team-select"
+                                    class="bg-gray-900 border border-gray-700 text-gray-200 text-xs rounded p-1.5 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="all">All Teams</option>
+                                    <!-- Options injected by JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Stat Filters Builder -->
+                        <div class="flex flex-wrap gap-2 items-center border-t border-gray-700 pt-3">
+                            <span class="text-xs text-gray-400 font-bold uppercase mr-1">Stat:</span>
+                            <select id="filter-stat-key"
+                                class="bg-gray-900 border border-gray-700 text-gray-200 text-xs rounded p-1.5 w-[120px]">
+                                <option value="fpts">FPTS</option>
+                                <option value="g">Goals</option>
+                                <option value="at">Assists</option>
+                                <option value="kp">Key Passes</option>
+                                <option value="sot">SoT</option>
+                                <option value="minutes">Minutes</option>
+                                <!-- Add more as needed -->
+                            </select>
+                            <span class="text-xs text-gray-500">>=</span>
+                            <input type="number" id="filter-stat-val"
+                                class="bg-gray-900 border border-gray-700 text-gray-200 text-xs rounded p-1.5 w-[60px]"
+                                placeholder="0">
+                            <button onclick="addStatFilter()"
+                                class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded shadow transition-colors">
+                                + Add
+                            </button>
+
+                            <!-- Active Filter Tags -->
+                            <div id="active-stat-filters" class="flex flex-wrap gap-2 ml-2">
+                                <!-- Tags injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Actions -->
+                        <div class="flex justify-end pt-2 border-t border-gray-700 space-x-2">
+                            <button onclick="resetWaiverFilters()"
+                                class="px-3 py-1 text-xs text-gray-400 hover:text-white underline">Reset All</button>
+                            <button onclick="applyWaiverFilters()"
+                                class="px-4 py-1 bg-green-600 hover:bg-green-500 text-white text-xs font-bold rounded shadow transition-colors">Apply
+                                Filters</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto relative shadow-md sm:rounded-lg border border-gray-700 max-h-[70vh]">
+                    <table class="w-full text-sm text-left" id="waivers-table">
+                        <thead
+                            class="text-xs text-gray-400 uppercase bg-gray-800 border-b border-gray-700 sticky top-0 z-40">
+                            <!-- Top Header Row: Categories -->
+                            <tr>
+                                <th scope="col"
+                                    class="py-2 px-2 sticky left-0 z-50 bg-gray-900 border-b border-gray-700 w-[30px] text-center shadow-[1px_0_0_rgba(55,65,81,1)]">
+                                    Rank</th>
+                                <th scope="col"
+                                    class="py-2 px-2 sticky left-[30px] z-50 bg-gray-900 border-b border-gray-700 min-w-[120px] max-w-[160px] border-r border-gray-700 shadow-[2px_0_5px_rgba(0,0,0,0.5)]">
+                                    Player</th>
+                                <th scope="col"
+                                    class="py-2 px-2 text-center whitespace-nowrap min-w-[60px] border-r border-gray-700">
+                                    Status</th>
+                                <th scope="col" class="py-2 px-2 text-center whitespace-nowrap min-w-[60px]">Team</th>
+                                <th scope="col"
+                                    class="py-2 px-2 text-center whitespace-nowrap border-r border-gray-700 min-w-[50px]">
+                                    Pos</th>
+
+                                <!-- FPTS Group -->
+                                <th scope="col"
+                                    class="py-2 px-2 text-right border-r border-gray-700 text-blue-400 font-bold cursor-pointer hover:text-blue-300 min-w-[50px] group relative"
+                                    onclick="sortWaivers('fpts')">
+                                    FPTS
+                                    <div
+                                        class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-gray-900/95 text-white text-[10px] font-normal rounded shadow-xl border border-gray-600 opacity-0 group-hover:opacity-100 transition-opacity z-[60] pointer-events-none whitespace-nowrap">
+                                        Fantasy points
+                                    </div>
+                                </th>
+
+                                <!-- Mins -->
+                                <th scope="col"
+                                    class="py-2 px-2 text-right border-r border-gray-700 cursor-pointer hover:text-white min-w-[50px] group relative"
+                                    onclick="sortWaivers('minutes')">
+                                    Mins
+                                    <div
+                                        class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-gray-900/95 text-white text-[10px] font-normal rounded shadow-xl border border-gray-600 opacity-0 group-hover:opacity-100 transition-opacity z-[60] pointer-events-none whitespace-nowrap">
+                                        Minutes played
+                                    </div>
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-2 text-right border-r border-gray-700 cursor-pointer hover:text-white min-w-[40px] group relative"
+                                    onclick="sortWaivers('gp')">
+                                    GP
+                                    <div
+                                        class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-gray-900/95 text-white text-[10px] font-normal rounded shadow-xl border border-gray-600 opacity-0 group-hover:opacity-100 transition-opacity z-[60] pointer-events-none whitespace-nowrap">
+                                        Games played
+                                    </div>
+                                </th>
+
+
+                                <!-- Dynamic Stats Headers (Injected by JS) -->
+                                <th id="waivers-header-placeholder"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="waivers-table-body" class="divide-y divide-gray-800">
+                            <tr>
+                                <td colspan="13" class="py-4 text-center text-gray-500">Loading waivers...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Pagination Controls -->
+                <div class="flex items-center justify-between p-4 bg-gray-900 border-t border-gray-700">
+                    <button id="btn-prev-page" onclick="prevWaiverPage()"
+                        class="px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Previous
+                    </button>
+                    <span id="waivers-page-info" class="text-sm text-gray-400">Page 1</span>
+                    <button id="btn-next-page" onclick="nextWaiverPage()"
+                        class="px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- CHAT VIEW -->
+        <main id="view-chat" class="view-section hidden">
+            <!-- Adjusted height for mobile to account for wrapping header (approx 220px offset) -->
+            <div
+                class="glass-panel p-3 md:p-6 rounded-xl h-[calc(100dvh-220px)] md:h-[calc(100vh-140px)] flex flex-col">
+                <!-- PRINT HEADER (Hidden by default, shown in print) -->
+                <div id="print-header">
+                    <h1 class="text-3xl font-bold text-black mb-2">Fantasy Premier League</h1>
+                    <h2 class="text-xl text-gray-600 font-semibold">Commissioner Report</h2>
+                    <p id="print-timestamp" class="text-xs text-gray-500 mt-2 uppercase tracking-widest">--</p>
+                </div>
+                <div class="flex items-center justify-between mb-2 md:mb-4">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-cyan-400">🤖 Commissioner Bot</h3>
+                        <p class="text-xs md:text-sm text-gray-400">Your crude, unfiltered, data-backed league
+                            commissioner.</p>
+                    </div>
+                </div>
+
+                <div id="chat-messages"
+                    class="flex flex-col flex-1 overflow-y-auto mb-3 md:mb-4 space-y-3 bg-gray-900/30 rounded-lg p-3 md:p-4 custom-scrollbar">
+                    <div class="flex flex-col items-center justify-center h-full text-center p-6 opacity-90">
+                        <div class="text-5xl mb-6">🍺</div>
+                        <h3 class="text-2xl font-bold text-white mb-2 tracking-tight">The Commissioner is IN.</h3>
+                        <p class="text-gray-400 text-sm max-w-sm mb-8 italic leading-relaxed">
+                            "Right, listen here. I've got the data, I've got the pints, and I've got absolutely zero
+                            patience for your tragic management skills. State your business."
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
+                            <button onclick="askQuestion('Who is the biggest bottler this season?')"
+                                class="p-4 bg-gray-800/40 hover:bg-gray-700/60 border border-gray-700/50 hover:border-gray-600 rounded-xl text-left transition-all hover:scale-[1.02] group shadow-lg">
+                                <span
+                                    class="block text-blue-400 text-[10px] uppercase tracking-wider font-bold mb-1 group-hover:text-blue-300">Analysis</span>
+                                <span class="text-gray-200 text-sm font-medium">"Who's the biggest bottler?"</span>
+                            </button>
+
+                            <button onclick="askQuestion('Roast the team in last place properly.')"
+                                class="p-4 bg-gray-800/40 hover:bg-gray-700/60 border border-gray-700/50 hover:border-gray-600 rounded-xl text-left transition-all hover:scale-[1.02] group shadow-lg">
+                                <span
+                                    class="block text-red-400 text-[10px] uppercase tracking-wider font-bold mb-1 group-hover:text-red-300">Banter</span>
+                                <span class="text-gray-200 text-sm font-medium">"Roast the last place team"</span>
+                            </button>
+
+                            <button onclick="askQuestion('Who should I pick up from waivers? Check for injuries.')"
+                                class="p-4 bg-gray-800/40 hover:bg-gray-700/60 border border-gray-700/50 hover:border-gray-600 rounded-xl text-left transition-all hover:scale-[1.02] group shadow-lg">
+                                <span
+                                    class="block text-green-400 text-[10px] uppercase tracking-wider font-bold mb-1 group-hover:text-green-300">Strategy</span>
+                                <span class="text-gray-200 text-sm font-medium">"Waiver wire analysis"</span>
+                            </button>
+
+                            <button onclick="askQuestion('What are the streets saying about Cole Palmer?')"
+                                class="p-4 bg-gray-800/40 hover:bg-gray-700/60 border border-gray-700/50 hover:border-gray-600 rounded-xl text-left transition-all hover:scale-[1.02] group shadow-lg">
+                                <span
+                                    class="block text-orange-400 text-[10px] uppercase tracking-wider font-bold mb-1 group-hover:text-orange-300">Social</span>
+                                <span class="text-gray-200 text-sm font-medium">"What are the streets saying?"</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <input id="chat-input" type="text" placeholder="Type your message..."
+                        class="flex-1 bg-gray-800 border border-gray-700 rounded px-3 md:px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
+                        onkeypress="if(event.key === 'Enter') sendMessage()">
+                    <button onclick="downloadChatPDF()"
+                        class="px-3 md:px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded font-medium transition-colors text-sm flex items-center justify-center min-w-[42px]"
+                        title="Download as PDF">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pointer-events-none" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 011.414.586l4.758 4.758a1 1 0 01.586 1.414V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </button>
+                    <button onclick="clearChat()"
+                        class="px-3 md:px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded font-medium transition-colors text-sm"
+                        title="Clear conversation">
+                        Clear
+                    </button>
+                    <button onclick="sendMessage()" id="send-btn"
+                        class="px-4 md:px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors text-sm">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- LEAGUE INFO VIEW -->
+        <main id="view-info" class="view-section hidden">
+            <div class="space-y-6 animate-fade-in max-w-5xl mx-auto">
+                <!-- Intro -->
+                <div class="glass-panel p-6 rounded-xl border border-gray-700">
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">Fantasy Prem 2025-26</h2>
+                    <p class="text-gray-300 font-medium">Welcome to the third annual edition of the Gentlemen’s
+                        Invitational Fantasy Premier League.</p>
+                    <p class="text-gray-400 mt-2 text-sm leading-relaxed">
+                        This year’s competition features 14 sides, including one new team debuting this year.
+                        Competitors join from San Diego, Los Angeles, San Francisco, New York, Washington D.C., and
+                        Antarctica.
+                    </p>
+                </div>
+
+                <!-- Managers Table -->
+                <div class="glass-panel p-6 rounded-xl overflow-x-auto border border-gray-700">
+                    <h3 class="text-xl font-bold text-blue-300 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                        Managers & History
+                    </h3>
+                    <table class="w-full text-sm text-left whitespace-nowrap">
+                        <thead class="text-gray-400 border-b border-gray-700 bg-gray-900/50">
+                            <tr>
+                                <th class="py-3 px-4 rounded-tl-lg">Manager</th>
+                                <th class="py-3 px-4">Prev. Finishes</th>
+                                <th class="py-3 px-4">Prize Won</th>
+                                <th class="py-3 px-4 rounded-tr-lg">Accomplishments</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Varun</td>
+                                <td class="py-3 px-4">7th, 5th</td>
+                                <td class="py-3 px-4 text-green-400">$160</td>
+                                <td class="py-3 px-4 text-blue-300">2025 Champions League 🏆</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Arnav</td>
+                                <td class="py-3 px-4">5th, 14th</td>
+                                <td class="py-3 px-4 text-green-400">$135</td>
+                                <td class="py-3 px-4 text-yellow-300">2024 Playoff 🏆</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Shawn</td>
+                                <td class="py-3 px-4">9th, 1st</td>
+                                <td class="py-3 px-4 text-green-400">$125</td>
+                                <td class="py-3 px-4 text-orange-300">2024-25 League Title 👑</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Zach</td>
+                                <td class="py-3 px-4">1st, 2nd</td>
+                                <td class="py-3 px-4 text-green-400">$85</td>
+                                <td class="py-3 px-4 text-orange-300">2023-24 League Title 👑</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Puru</td>
+                                <td class="py-3 px-4">11th, 9th</td>
+                                <td class="py-3 px-4 text-green-400">$70</td>
+                                <td class="py-3 px-4 text-purple-300">2025 Lingineni Cup 🏆</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Suda</td>
+                                <td class="py-3 px-4">6th, 4th</td>
+                                <td class="py-3 px-4 text-green-400">$50</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Nilay</td>
+                                <td class="py-3 px-4">3rd</td>
+                                <td class="py-3 px-4 text-green-400">$25</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Ari</td>
+                                <td class="py-3 px-4">4th, 7th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Danny</td>
+                                <td class="py-3 px-4">6th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Joseph</td>
+                                <td class="py-3 px-4">3rd, 11th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Subba</td>
+                                <td class="py-3 px-4">8th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Young</td>
+                                <td class="py-3 px-4">10th, 10th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Henry</td>
+                                <td class="py-3 px-4">8th, 13th</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="py-3 px-4 font-bold text-white">Isaac</td>
+                                <td class="py-3 px-4 text-cyan-400 italic">Debut</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                                <td class="py-3 px-4 text-gray-500">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Important Dates & Format -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-panel p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-xl font-bold text-yellow-500 mb-3 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Important Dates
+                        </h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full bg-yellow-500 mt-1.5"></div>
+                                <div><strong class="text-white block">August 6, 2025</strong> <span
+                                        class="text-gray-400">Draft Day (7PM PT / 10PM ET)</span></div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full bg-yellow-500 mt-1.5"></div>
+                                <div><strong class="text-white block">August 15, 2025</strong> <span
+                                        class="text-gray-400">Premier League Kickoff</span></div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full bg-red-500 mt-1.5"></div>
+                                <div><strong class="text-white block">Matchweek 34</strong> <span
+                                        class="text-gray-400">Trade & Transfer Deadline (Rosters Lock)</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-xl font-bold text-green-500 mb-3 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                                </path>
+                            </svg>
+                            League Format
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><strong class="text-white">Squad Size:</strong> 17 Players (11 Starters + Bench).</li>
+                            <li><strong class="text-white">Transactions:</strong> Unlimited trades and free agents via
+                                Fantrax.</li>
+                            <li><strong class="text-white">Lockout:</strong> Lineups set before real-life kickoff.</li>
+                            <li><strong class="text-white">Scoring:</strong> Head-to-Head. Most fantasy points wins 3
+                                league points.</li>
+                            <li><strong class="text-white">Anti-Collusion:</strong> Rosters hard-locked at MW 34 prevent
+                                late-season dumping.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tournaments -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8">
+                    <div class="glass-panel p-6 rounded-xl border border-blue-900/50">
+                        <h3 class="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
+                            Champions League
+                        </h3>
+                        <div class="text-sm text-gray-300 space-y-2">
+                            <p>Group Stage followed by aggregate knockouts.</p>
+                            <div class="bg-blue-900/20 p-3 rounded-lg mt-2 border border-blue-800/30">
+                                <p class="text-xs text-blue-200">Winner advances to glory and prize money.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border border-orange-900/50">
+                        <h3 class="text-xl font-bold text-orange-400 mb-3 flex items-center gap-2">
+                            Lingineni Cup
+                        </h3>
+                        <div class="text-sm text-gray-300 space-y-3">
+                            <div class="flex justify-between border-b border-gray-700 pb-1">
+                                <span>Round 1 (MW 9)</span>
+                                <span class="text-gray-500">Bottom 3 + Isaac</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-1">
+                                <span>Round 2 (MW 14)</span>
+                                <span class="text-gray-500">Winners + 6 Others</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-1">
+                                <span>Round 3 (MW 19)</span>
+                                <span class="text-gray-500">Winners + Top 4</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-1">
+                                <span>Semis (MW 24 & 29)</span>
+                                <span class="text-gray-500">Double Leg</span>
+                            </div>
+                            <div class="flex justify-between text-orange-300 font-bold">
+                                <span>Final (MW 34)</span>
+                                <span>Winner Crowned</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+
+
+        <!-- LINEUP MODAL (Hidden by default) -->
+        <div id="lineup-modal"
+            class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
+            <div
+                class="bg-gray-900 w-full md:w-[95%] max-w-4xl h-full md:h-[90vh] rounded-xl border border-gray-700 flex flex-col relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="p-6 border-b border-gray-800">
+                    <h3 class="text-xl font-bold text-center text-white" id="modal-matchup-title">Matchup Details</h3>
+                    <p class="text-center text-sm text-gray-400 mt-1" id="modal-prediction-note">Predictions available
+                        for Week <span id="pred-week"></span></p>
+                </div>
+                <div class="flex-1 overflow-auto p-4 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-8" id="modal-content">
+                    <!-- Lineups go here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/static/js/app.js?v=1.1"></script>
+    <!-- PLAYER DETAILS MODAL -->
+    <div id="player-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-[60]">
+        <div
+            class="bg-gray-900 w-full md:w-[800px] max-w-[95%] max-h-[90vh] rounded-xl border border-gray-700 flex flex-col relative shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closePlayerModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white z-10 p-2 bg-gray-800 rounded-full hover:bg-gray-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Header -->
+            <div class="p-6 border-b border-gray-700 bg-gray-800/50 rounded-t-xl">
+                <h3 class="text-2xl font-bold text-white flex items-center gap-3" id="pm-name">
+                    Loading...
+                </h3>
+                <div class="text-sm text-gray-400 mt-1 flex gap-4" id="pm-meta">
+                    <span id="pm-team"></span>
+                    <span id="pm-pos"
+                        class="bg-blue-900/50 text-blue-300 px-2 rounded text-xs font-bold py-0.5 border border-blue-800"></span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 overflow-auto p-6 space-y-8">
+
+                <!-- Season Totals -->
+                <div>
+                    <h4
+                        class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3 border-b border-gray-800 pb-1">
+                        Season Totals</h4>
+                    <div class="grid grid-cols-4 md:grid-cols-6 gap-3" id="pm-season-stats">
+                        <!-- Injected JS -->
+                    </div>
+                </div>
+
+                <!-- Game Log -->
+                <div>
+                    <h4
+                        class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3 border-b border-gray-800 pb-1">
+                        Game Log</h4>
+                    <div class="overflow-x-auto rounded-lg border border-gray-700">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-gray-800 text-gray-400 text-xs uppercase">
+                                <tr>
+                                    <th class="py-2 px-3 border-b border-gray-700">Wk</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right">FPTS</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right text-gray-500">Mins</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right">G</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right">A</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right text-gray-500">SOT</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right text-gray-500">KP</th>
+                                    <th class="py-2 px-3 border-b border-gray-700 text-right text-gray-500">Tackles</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-800 font-mono" id="pm-log-body">
+                                <!-- Injected JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
