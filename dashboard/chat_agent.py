@@ -603,8 +603,7 @@ CRITICAL RULES:
             models_to_try = [(model, custom_url)]
         else:
             models_to_try = [
-                ("gemini-2.0-flash", self.flash_url), # Upgrade default to 2.0-flash if available, or keep 2.5 logic
-                ("gemini-2.5-flash", self.flash_url), # Assuming self.flash_url points to 2.5 based on init
+                ("gemini-2.5-flash", self.flash_url), 
                 ("gemini-2.5-pro", self.pro_url)
             ]
         

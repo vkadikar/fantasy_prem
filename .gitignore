@@ -1,0 +1,54 @@
+# Environment variables (CRITICAL)
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+server_error.log
+dashboard/data/*.json  # Optional: Don't commit local data updates if you want fresh starts
+# But for this app, maybe we keep data? 
+# Usually better to ignore dynamic data.
+dashboard/data/stats_cache.json
+dashboard/data/roster_cache.json
+# Keep dashboard_data.json if it serves as seed data?
+# Let's verify if dashboard_data.json is seed. 
+# It is updated by the script. Better to ignore it if it changes constantly.
+
+# Cookies (CRITICAL)
+*.cookie
+fantraxloggedin.cookie
+
+# Render specific
+# .python-version (We actually want this committed for Render)
