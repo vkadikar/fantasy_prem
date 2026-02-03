@@ -1,0 +1,13 @@
+flask
+pandas
+numpy
+requests
+plotly
+scikit-learn
+python-dotenv
+gunicorn
+pypdf
+# Reddit / MCP Dependencies
+praw
+mcp
+fantraxapi==0.2.9
