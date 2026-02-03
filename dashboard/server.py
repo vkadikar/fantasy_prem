@@ -8,6 +8,9 @@ import subprocess
 from fantraxapi import FantraxAPI
 from requests import Session
 import pickle
+
+# Fix for Render/Gunicorn import issues: Ensure current directory is in path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from chat_agent import MultiAgentChatSystem as ChatAgent
 
 # Import configuration
