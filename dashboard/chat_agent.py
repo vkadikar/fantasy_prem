@@ -442,23 +442,30 @@ AVAILABLE DATA:
    # 1. Aggregate goals by player_id
    player_goals = {{}}
    for key, stats in stats_cache.items():
-       player_id = key.split('_')[0]
-       goals = stats.get('G', 0)
-       player_goals[player_id] = player_goals.get(player_id, 0) + goals
+       # Use rsplit to handle IDs safely (just in case)
+       try:
+           player_id = key.rsplit('_', 1)[0]
+           goals = stats.get('G', 0)
+           player_goals[player_id] = player_goals.get(player_id, 0) + goals
+       except: continue
    
-   # 2. Create player_id to name mapping from predictions
-   player_names = {{p['player_id']: p['player_name'] for p in predictions}}
+   # 2. Use global 'players' dict for names (COMPLETE list)
+   # (predictions only has active players)
    
    # 3. Combine into DataFrame
    data = []
    for player_id, total_goals in player_goals.items():
+       name = players.get(player_id, player_id) # Safe lookup
        data.append({{
-           'player_name': player_names.get(player_id, 'Unknown'),
+           'player_name': name,
            'total_goals': total_goals
        }})
    
    df = pd.DataFrame(data)
-   result = df.nlargest(10, 'total_goals')
+   if not df.empty:
+       result = df.nlargest(10, 'total_goals')
+   else:
+       result = "No goal data found."
    ```
 
 8. players: dict of all player ids to names
@@ -512,6 +519,9 @@ CRITICAL RULES:
 - For visualizations: create plotly.express figure, store in 'result'
 - DO NOT call .to_html() or .show() - just return the figure object
 - Example: result = px.bar(df, x='team', y='score')
+- EMPTY DATA CHECK: If your DataFrame is empty, DO NOT return a figure. Return a string explaining why.
+  - Correct: `if df.empty: result = "No data found."`
+  - Wrong: `result = px.line(df, ...)` (Produces empty shell)
 
 10. EXTERNAL TOOLS:
     `search_reddit(query: str, limit: int = 5)` -> str
@@ -1168,6 +1178,20 @@ Return ONLY fixed code in ```python block. NO explanations."""
             # Define helper closure for safe_globals
             def find_player(name): return self._find_player(name)
 
+            # DEBUG LOGGING TO SERVER LOG
+            cw = self.data.get('current_week', 22)
+            sc = self.data.get('stats_cache', {})
+            print(f"DEBUG: _execute_code - CURRENT_WEEK: {cw}", flush=True)
+            print(f"DEBUG: _execute_code - Stats Cache Size: {len(sc)}", flush=True)
+            if sc:
+                print(f"DEBUG: _execute_code - Sample Keys: {list(sc.keys())[:5]}", flush=True)
+                print(f"DEBUG: _execute_code - Sample Value: {list(sc.values())[0]}", flush=True)
+            
+            p_dict = self.data.get('players', {})
+            print(f"DEBUG: _execute_code - Players Dict Size: {len(p_dict)}", flush=True)
+            if p_dict:
+                print(f"DEBUG: _execute_code - Sample Player: {list(p_dict.items())[0]}", flush=True)
+
             safe_globals = {
                 'pd': pd,
                 'np': np,
@@ -1176,14 +1200,14 @@ Return ONLY fixed code in ```python block. NO explanations."""
                 'json': json,
                 'matchups': self.data.get('matchups', []),
                 'standings': self.data.get('standings', {}),
-                'stats_cache': self.data.get('stats_cache', {}),
+                'stats_cache': sc,
                 'advanced_stats': self.data.get('advanced_stats', {}),
                 'predictions': self.data.get('predictions', []),
                 'waivers': self.data.get('waivers', []),
                 'players': self.data.get('players', {}),
                 'team_details': self.data.get('team_details', {}),
                 'roster_data': self.data.get('roster_data', {}),
-                'CURRENT_WEEK': self.data.get('current_week', 22),
+                'CURRENT_WEEK': cw,
                 'find_player': find_player, # Expose Helper
                 '__builtins__': {
                     'len': len, 'str': str, 'int': int, 'float': float,
@@ -1211,28 +1235,43 @@ Return ONLY fixed code in ```python block. NO explanations."""
             
             exec(code, combined_context)
             
+            # TRACE: Check intermediate variables if they exist in context
+            vars_to_check = ['df_all_goals', 'final_week_goals', 'df_plot', 'top_players_ids', 'latest_completed_week']
+            for v in vars_to_check:
+                if v in combined_context:
+                    val = combined_context[v]
+                    if hasattr(val, 'shape'):
+                        print(f"DEBUG: {v} shape: {val.shape}", flush=True)
+                    elif isinstance(val, list):
+                        print(f"DEBUG: {v} len: {len(val)}", flush=True)
+                        if val: print(f"DEBUG: {v} sample: {val[:3]}", flush=True)
+                    else:
+                        print(f"DEBUG: {v}: {val}", flush=True)
+                else:
+                    print(f"DEBUG: {v} NOT in context", flush=True)
+
             # Check for plotly figure in result
             result = combined_context.get('result', combined_context.get('_', None))
-            plotly_html = None
+            result = combined_context.get('result', combined_context.get('_', None))
+            plotly_json = None
             
-            # Check if result is a plotly figure object (not a DataFrame)
-            # Plotly figures have __class__.__name__ like 'Figure'
-            if result is not None and hasattr(result, 'to_html') and hasattr(result, 'data') and hasattr(result, 'layout'):
-                # This is likely a plotly figure
-                plotly_html = result.to_html(
-                    include_plotlyjs='cdn',  # Use CDN to keep response size small
-                    config={'responsive': True, 'displayModeBar': True},
-                    div_id=f'plotly-{id(result)}'
-                )
-            # Check if result is already HTML string (starts with <html or <div)
-            elif result is not None and isinstance(result, str) and ('<html' in result.lower()[:100] or '<div' in result.lower()[:100]):
-                plotly_html = result
-            
+            # Check if result is a plotly figure object
+            if result is not None and hasattr(result, 'to_json'):
+                # Serialize to JSON string then parse to dict to ensure compatibility
+                # This handles the serialization of complex types (numpy, etc) better than just result.to_dict() sometimes
+                try:
+                    # to_json returns a string
+                    plotly_json = json.loads(result.to_json())
+                except:
+                    # Fallback
+                    if hasattr(result, 'to_dict'):
+                        plotly_json = result.to_dict()
+
             return {
                 'success': True,
-                'result': result if not plotly_html else "Plot generated successfully.",
-                'has_plot': plotly_html is not None,
-                'plotly_html': plotly_html
+                'result': result if not plotly_json else "Plot generated successfully.",
+                'has_plot': plotly_json is not None,
+                'plotly_json': plotly_json
             }
             
         except Exception as e:
@@ -1261,7 +1300,9 @@ Return ONLY fixed code in ```python block. NO explanations."""
                 'success': True,
                 'type': 'text+plot',
                 'message': answer,
-                'data': {'html': exec_result['plotly_html']},
+                'type': 'text+plot',
+                'message': answer,
+                'data': {'plot_json': exec_result['plotly_json']},
                 'code': code
             }
         elif exec_result.get('result') is not None:
