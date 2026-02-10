@@ -35,23 +35,23 @@ def get_all_players(session):
     df_players = pd.DataFrame()
     
     # Initialize API wrapper
-    from fantraxapi.api import request, Method
+    # from fantraxapi.api import request, Method
     api = FantraxAPI(LEAGUE_ID, session=session)
     
     # Initial request to see total pages
     try:
-        # Use the global `request` function from fantraxapi.api
-        # Method("getPlayerStats", ...) constructs the payload
-        response = request(api, Method("getPlayerStats", statusOrTeamFilter='ALL', pageNumber=1, period=CURRENT_WEEK, view='STATS'))
-        data_resp = response  # request returns the data dict directly
+        # Use api._request instead of global request/Method
+        response = api._request("getPlayerStats", statusOrTeamFilter='ALL', pageNumber=1, period=CURRENT_WEEK, view='STATS')
+        data_resp = response
         total_pages = data_resp['paginatedResultSet']['totalNumPages']
         print(f"Total pages to fetch: {total_pages}")
         
         # Iterate all pages
         for i in range(1, total_pages + 1):
             try:
-                # User logic casts to str. API wrapper likely handles it, but let's be safe per snippet.
-                response = request(api, Method("getPlayerStats", statusOrTeamFilter='ALL', pageNumber=str(i), period=CURRENT_WEEK, view='STATS'))
+                # User logic casts to str
+                response = api._request("getPlayerStats", statusOrTeamFilter='ALL', pageNumber=str(i), period=CURRENT_WEEK, view='STATS')
+
                 
                 rows = response.get('statsTable', [])
                 if not rows:
@@ -137,7 +137,11 @@ def get_player_game_log(session, player_id, player_name, team_short_name, url_na
             data_rows = []
             for row in rows:
                 row_data = {col: cell.get('content') for col, cell in zip(columns, row['cells'])}
+                # Debug Check Cherki
+                if player_id == '06v07':
+                    print(f"DEBUG CHERKI ROW: {row_data.get('Date')} - {row_data.get('Score')}")
                 data_rows.append(row_data)
+
                 
             df_history = pd.DataFrame(data_rows)
             if not df_history.empty:

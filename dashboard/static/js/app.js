@@ -1166,28 +1166,42 @@ function renderChatResponse(data) {
     }
 
     // Handle different response types
-    if (type === 'text+plot' && data.data && data.data.html) {
-        const plotlyContainer = document.createElement('div');
-        plotlyContainer.className = 'mt-3 w-full';
-        plotlyContainer.style.minHeight = '400px';
+    // Handle different response types
+    if (type === 'text+plot' && data.data) {
+        // NEW JSON BASED PLOT
+        if (data.data.plot_json) {
+            const plotlyContainer = document.createElement('div');
+            plotlyContainer.className = 'mt-3 w-full';
+            plotlyContainer.style.minHeight = '400px';
+            bubble.appendChild(plotlyContainer);
 
-        plotlyContainer.innerHTML = data.data.html;
-        bubble.appendChild(plotlyContainer);
-
-        // Execute any inline scripts after a brief delay
-        setTimeout(() => {
-            const scripts = plotlyContainer.querySelectorAll('script');
-            scripts.forEach(script => {
-                if (script.textContent && !script.src) {
-                    try {
-                        const scriptFunc = new Function(script.textContent);
-                        scriptFunc();
-                    } catch (e) {
-                        console.error('Error executing plotly script:', e);
-                    }
+            setTimeout(() => {
+                if (window.Plotly) {
+                    Plotly.newPlot(plotlyContainer, data.data.plot_json.data, data.data.plot_json.layout);
+                } else {
+                    console.error("Plotly not loaded");
+                    plotlyContainer.innerHTML = "Error: Plotly library not found. Please refresh.";
                 }
-            });
-        }, 100);
+            }, 100);
+        }
+        // OLD HTML FALLBACK
+        else if (data.data.html) {
+            const plotlyContainer = document.createElement('div');
+            plotlyContainer.className = 'mt-3 w-full';
+            plotlyContainer.style.minHeight = '400px';
+            plotlyContainer.innerHTML = data.data.html;
+            bubble.appendChild(plotlyContainer);
+
+            setTimeout(() => {
+                const scripts = plotlyContainer.querySelectorAll('script');
+                scripts.forEach(script => {
+                    if (script.textContent && !script.src) {
+                        try { new Function(script.textContent)(); } catch (e) { }
+                    }
+                });
+            }, 100);
+        }
+
     } else if (type === 'text+table' && data.data) {
         // Support both single table and multi-table (dict)
         if (data.data.table && Array.isArray(data.data.table)) {

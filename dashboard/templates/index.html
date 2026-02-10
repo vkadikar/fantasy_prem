@@ -151,6 +151,33 @@
         #print-header {
             display: none;
         }
+
+        /* MOBILE OPTIMIZATIONS */
+        @media screen and (max-width: 768px) {
+
+            /* Prevent iOS zoom on inputs */
+            input[type="text"],
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+
+            /* Compact Tables for Mobile */
+            table th,
+            table td {
+                padding-left: 0.25rem !important;
+                /* px-1 */
+                padding-right: 0.25rem !important;
+                font-size: 0.75rem !important;
+                /* text-xs */
+            }
+
+            /* Allow tables to shrink */
+            .overflow-x-auto table {
+                min-width: 0 !important;
+                width: 100% !important;
+            }
+        }
     </style>
 </head>
 
@@ -257,7 +284,7 @@
                 <div class="glass-panel p-6 rounded-xl">
                     <h2 class="text-xl font-semibold mb-4 text-blue-300">Standard Standings</h2>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left min-w-[500px]" id="table-standard">
+                        <table class="w-full text-sm text-left" id="table-standard">
                             <thead class="text-gray-400 border-b border-gray-700">
                                 <tr>
                                     <th class="py-2">Rank</th>
@@ -278,7 +305,7 @@
                 <div class="glass-panel p-6 rounded-xl">
                     <h2 class="text-xl font-semibold mb-4 text-purple-300">vs. Median</h2>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left min-w-[500px]" id="table-median">
+                        <table class="w-full text-sm text-left" id="table-median">
                             <thead class="text-gray-400 border-b border-gray-700">
                                 <tr>
                                     <th class="py-2">Rank</th>
@@ -297,7 +324,7 @@
                 <div class="glass-panel p-6 rounded-xl">
                     <h2 class="text-xl font-semibold mb-4 text-green-300">Optimal</h2>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left min-w-[500px]" id="table-optimal">
+                        <table class="w-full text-sm text-left" id="table-optimal">
                             <thead class="text-gray-400 border-b border-gray-700">
                                 <tr>
                                     <th class="py-2">Rank</th>
@@ -320,7 +347,7 @@
                 <div class="glass-panel p-6 rounded-xl">
                     <h2 class="text-xl font-semibold mb-4 text-yellow-300">Champions League</h2>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left min-w-[500px]" id="table-champleague">
+                        <table class="w-full text-sm text-left" id="table-champleague">
                             <thead class="text-gray-400 border-b border-gray-700">
                                 <tr>
                                     <th class="py-2">Team</th>

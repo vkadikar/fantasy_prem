@@ -497,13 +497,12 @@ def get_lineup(matchup_id):
             print(f"DEBUG: Sample player IDs in pred_map: {sample_ids}")
         
         api = get_fantrax_api()
-        from fantraxapi.api import request, Method
+        # from fantraxapi.api import request, Method
         
         def fetch_team_roster(tid, period):
             try:
                 # Fetch roster for specific period
-                # roster_data = request(api, Method("getTeamRosterInfo", teamId=tid, period=period))
-                roster_data = request(api, Method("getTeamRosterInfo", teamId=tid, period=period))
+                roster_data = api._request("getTeamRosterInfo", teamId=tid, period=period)
                 
                 players = []
                 if 'tables' in roster_data and isinstance(roster_data['tables'], list):
