@@ -6,23 +6,15 @@ Starting server on port 8000 with Live Updates enabled...
  * Running on http://127.0.0.1:8000
  * Running on http://192.168.1.158:8000
 [33mPress CTRL+C to quit[0m
-127.0.0.1 - - [09/Feb/2026 20:24:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:29:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:34:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "GET /static/js/app.js?v=1.1 HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "POST /api/chat/clear HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:00] "GET /api/matchups/26 HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:43:24] "POST /api/chat HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:45:42] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:48:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:48:01] "GET /api/matchups/26 HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:50:42] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:53:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:53:01] "GET /api/matchups/26 HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:55:42] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:58:01] "GET /api/init HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 20:58:01] "GET /api/matchups/26 HTTP/1.1" 200 -
-127.0.0.1 - - [09/Feb/2026 21:00:42] "GET /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "[36mGET /static/js/app.js?v=1.1 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "GET /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "POST /api/chat/clear HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:22] "GET /api/matchups/26 HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:42] "GET /api/init HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:40:47] "GET /api/lineup/26_pmzfm9z8mdg3f44o_39gqvc1wmdg4tnfu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:41:05] "GET /api/matchups/25 HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:41:07] "GET /api/lineup/25_p7p53wgimdj1ldb3_1t98phesmd5cytbv HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:41:08] "GET /api/player/06cmu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Feb/2026 21:45:23] "GET /api/init HTTP/1.1" 200 -

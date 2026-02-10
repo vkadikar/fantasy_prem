@@ -614,12 +614,9 @@ CRITICAL RULES:
         else:
             models_to_try = [
                 ("gemini-2.5-pro", self.pro_url),
-<<<<<<< HEAD
                 ("gemini-2.5-flash", self.flash_url) 
-=======
-                ("gemini-2.5-flash", self.flash_url)
->>>>>>> 3d049c67071b1c1a471cd21cfbb2a6c454730296
             ]
+
 
         
         last_exception = None

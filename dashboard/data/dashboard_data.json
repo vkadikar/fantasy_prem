@@ -3038,7 +3038,7 @@
             "away_team_id": "af1qhccfmdhlee7c",
             "away_score": 27.0,
             "home_optimal_score": 85.25,
-            "away_optimal_score": 40.25,
+            "away_optimal_score": 41.5,
             "home_median_score": 80.75,
             "median_threshold": 80.75,
             "home_beat_median": false,
@@ -3109,7 +3109,7 @@
             "away_team": "Traderjoe18",
             "away_team_id": "8j17gbjmmdewvf8d",
             "away_score": 91.75,
-            "home_optimal_score": 134.25,
+            "home_optimal_score": 135.25,
             "away_optimal_score": 106.5,
             "home_median_score": 80.75,
             "median_threshold": 80.75,
@@ -4493,7 +4493,7 @@
                 "loss": 8,
                 "points": 51,
                 "fpts_for": 2531.25,
-                "fpts_against": 2436.25,
+                "fpts_against": 2437.5,
                 "record": "17-0-8",
                 "rank": 2
             },
@@ -4504,7 +4504,7 @@
                 "loss": 10,
                 "points": 45,
                 "fpts_for": 2553.75,
-                "fpts_against": 2301.75,
+                "fpts_against": 2302.75,
                 "record": "15-0-10",
                 "rank": 3
             },
@@ -4558,7 +4558,7 @@
                 "draw": 0,
                 "loss": 13,
                 "points": 36,
-                "fpts_for": 2391.25,
+                "fpts_for": 2392.5,
                 "fpts_against": 2450.25,
                 "record": "12-0-13",
                 "rank": 8
@@ -4580,7 +4580,7 @@
                 "draw": 0,
                 "loss": 15,
                 "points": 30,
-                "fpts_for": 2335.75,
+                "fpts_for": 2336.75,
                 "fpts_against": 2475.75,
                 "record": "10-0-15",
                 "rank": 10
@@ -7035,15 +7035,15 @@
                     "pct": 134.0
                 },
                 "worst_eff": {
-                    "team": "hdiamondpott",
-                    "score": 34.0,
-                    "opt": 51.0,
-                    "pct": 66.7
+                    "team": "Wallalujah FC",
+                    "score": 27.0,
+                    "opt": 41.5,
+                    "pct": 65.1
                 }
             }
         ]
     },
-    "last_updated": "2026-02-09T20:29:00.217374",
+    "last_updated": "2026-02-09T21:41:40.483327",
     "current_week": 26,
     "predictions": [
         {
