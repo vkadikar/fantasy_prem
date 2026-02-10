@@ -1814,7 +1814,7 @@ function renderWaivers() {
             <td class="py-2 px-2 text-center text-gray-400 text-[10px] uppercase whitespace-nowrap">${p.team || '-'}</td>
             <td class="py-2 px-2 text-center font-bold text-[10px] bg-gray-800 rounded px-1 w-min whitespace-nowrap mx-auto border border-gray-700">${p.position}</td>
             
-            <td class="py-2 px-2 text-right font-bold text-blue-400 font-mono text-[11px] border-r border-gray-700 whitespace-nowrap">${(fptsVal || 0).toFixed(1)}</td>
+            <td class="py-2 px-2 text-right font-bold text-blue-400 font-mono text-[11px] border-r border-gray-700 whitespace-nowrap">${(fptsVal || 0).toFixed(2)}</td>
             
             <td class="py-2 px-2 text-right text-gray-500 font-mono text-[11px] border-r border-gray-800 whitespace-nowrap">${p.minutes}</td>
             <td class="py-2 px-2 text-right text-gray-500 font-mono text-[11px] border-r border-gray-800 whitespace-nowrap">${p.gp}</td>

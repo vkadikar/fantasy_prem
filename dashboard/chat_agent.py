@@ -608,12 +608,18 @@ CRITICAL RULES:
         
         # Define models to try in order
         if model:
-             # If specific model requested, try ONLY that one (or map it)
+             # If specific model requested, prioritize it but add fallback if it's the preview
             custom_url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={self.api_key}"
             models_to_try = [(model, custom_url)]
+            
+            # CRITICAL FALLBACK: If preview model allows 503s, fall back to Flash 2.5
+            if "gemini-3" in model:
+                 models_to_try.append(("gemini-2.5-flash", self.flash_url))
         else:
+            # User Request: Default to Gemini 3 Flash Preview, fallback to 2.5 Flash
+            preview_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={self.api_key}"
             models_to_try = [
-                ("gemini-2.5-pro", self.pro_url),
+                ("gemini-3-flash-preview", preview_url),
                 ("gemini-2.5-flash", self.flash_url) 
             ]
 
@@ -735,7 +741,7 @@ Response:"""
         
         try:
             # Use default model (Flash) since it's the only one working reliably
-            result = self._call_gemini(prompt, temperature=0.1, max_tokens=200)
+            result = self._call_gemini(prompt, temperature=0.1, max_tokens=200, model="gemini-2.5-flash")
             
             # Clean result of any markdown formatting if present
             clean_result = result.strip().replace('```json', '').replace('```', '')
@@ -969,7 +975,7 @@ Keep your response under 300 tokens. Be concise.
 
 Your plan:"""
 
-        return self._call_gemini(prompt, temperature=0.3, max_tokens=8192)  # Increased for plan flexibility
+        return self._call_gemini(prompt, temperature=0.3, max_tokens=8192, model="gemini-3-flash-preview")  # Increased for plan flexibility
     
     def _code_writer_agent(self, user_query: str, plan: str) -> str:
         """Agent 2: Write Python code based on plan."""
@@ -1073,7 +1079,7 @@ IMPORTANT:
 - If it's a single table, just return the DataFrame/List/String.
 """
 
-        response = self._call_gemini(prompt, temperature=0.2, max_tokens=8192)  # Code should be concise
+        response = self._call_gemini(prompt, temperature=0.2, max_tokens=8192, model="gemini-3-flash-preview")  # Code should be concise
         return self._extract_code(response)
 
     def _response_agent(self, user_query: str, plan: str, data: Any) -> str:
@@ -1121,7 +1127,7 @@ Using the DATA above, write the final response to the user.
 
 Response:"""
 
-        return self._call_gemini(prompt, temperature=0.7, max_tokens=8192)  # Higher temp for creativity
+        return self._call_gemini(prompt, temperature=0.7, max_tokens=8192, model="gemini-2.5-flash")  # Higher temp for creativity
 
 
     
@@ -1149,7 +1155,7 @@ Broken Code:
 
 Return ONLY fixed code in ```python block. NO explanations."""
 
-        response = self._call_gemini(prompt, temperature=0.1, max_tokens=8192)  # Slight increase for code fixes
+        response = self._call_gemini(prompt, temperature=0.1, max_tokens=8192, model="gemini-3-flash-preview")  # Slight increase for code fixes
         return self._extract_code(response)
     
     def _find_player(self, name_query: str) -> str:
@@ -1312,19 +1318,34 @@ Return ONLY fixed code in ```python block. NO explanations."""
             
             # Debug logging
             print(f"DEBUG: result_data type: {type(result_data)}")
-            print(f"DEBUG: has to_dict: {hasattr(result_data, 'to_dict')}")
-            if hasattr(result_data, '__class__'):
-                print(f"DEBUG: class name: {result_data.__class__.__name__}")
+            
+            # Check if result is a Plotly Figure
+            if isinstance(result_data, go.Figure):
+                 return {
+                    'success': True,
+                    'type': 'text+plot',
+                    'message': answer,
+                    'data': {'plot_json': result_data.to_json()},
+                    'code': code
+                }
             
             # Check if result is a DataFrame (table)
-            if hasattr(result_data, 'to_dict'):
+            if isinstance(result_data, pd.DataFrame):
                 print("DEBUG: Converting DataFrame to table")
                 # Limit tables to 20 rows to prevent overwhelming output
-                if hasattr(result_data, 'head'):
-                    result_data = result_data.head(20)
+                result_data = result_data.head(20)
                 
                 # Sanitize NaNs which cause JSON errors
                 safe_data = result_data.fillna('')
+                
+                # Helper to flatten nested objects (fixes [object Object] in chat)
+                def flatten_chat_data(val):
+                    if isinstance(val, dict) and 'team' in val and 'pct' in val:
+                        return f"{val['team']} ({val['pct']}%)"
+                    return val
+
+                # Apply flattening to all cells in the DataFrame
+                safe_data = safe_data.applymap(flatten_chat_data)
                 
                 return {
                     'success': True,
