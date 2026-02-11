@@ -1555,9 +1555,22 @@ def main():
         args.predictions = True
         args.waivers = True
         
-    # Dependencies
-    if args.rosters or args.predictions or args.waivers:
-        args.matchups = True # Need current matchups context for everything else
+    # Smart Dependencies (Cascading Updates)
+    if args.stats:
+        # If we have new stats (points), we MUST update everything that depends on them
+        print("Enable cascade: New Stats -> Update Rosters, Matchups, Waivers, Predictions")
+        args.waivers = True
+        args.rosters = True 
+        args.matchups = True
+        args.predictions = True
+        
+    if args.rosters:
+        # If rosters change, efficiency changes (Matchups) and available pool changes (Waivers)
+        args.matchups = True
+        args.waivers = True 
+        
+    if args.waivers or args.predictions:
+        args.matchups = True # Need context
         
     print(f"Update Configuration:")
     print(f"  Stats: {args.stats}")
